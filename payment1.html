@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{
+            background-color: #f8f8f8;
+            
+        }
+        #header{
+            /* width: 80%; */
+            /* margin: auto; */
+        
+            padding: 10px;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+            background-color: white;
+        }
+        #main {
+            display: flex;
+            justify-content:center;
+            
+        }
+        #left{
+            width: 40%;
+            margin-right: 30px;
+        }
+        #delivery_method{
+            box-sizing: border-box;
+            padding: 50px;
+            /* width: 80%; */
+            /* border: 1px solid red; */
+            box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+            background-color: white;
+            margin-top: 25px;
+            margin-bottom: 25px;
+        }
+        #delivery_method>div{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+        }
+      
+        #header img{
+            display: block;
+            margin: auto;
+           width: 250px;
+        }
+        #standard-delivery,#express-delivery{
+            /* font-size: 30px; */
+            height: 30px;
+            width: 30px;
+        }
+        #standard-delivery+label,#express-delivery+label{
+            font-size: 30px;
+        }
+       
+        #adress_container{
+            background-color: white;
+            box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+            margin-bottom: 25px;
+            padding: 0px 60px 0px 60px;
+        }
+        #adress_container>div{
+            display: flex;
+            justify-content: space-between;
+        }
+        #payment{
+            background-color: white;
+            box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+            margin-bottom: 25px;
+        }
+        #adress_container>input{
+            width: 100%;
+            height: 40px;
+            margin-top: 35px;
+            box-sizing: border-box;
+        }
+        #adress_container>div>input{
+            width: 35%;
+            height: 40px;
+            margin-top: 35px;
+            box-sizing: border-box;
+           
+        }
+        #cart_data{
+            background-color:white;
+            border: solid 1px green;
+            padding: 10px 60px 10px 60px;
+        }
+        #back_cart{
+         width: 100%;
+         /* padding: 10px 30px 10px 30px; */
+         padding: 5px;
+         font-size: 25px;
+         background-color: white;
+        }
+        #right{
+         
+          
+            margin-top: 20px;
+        }
+        #billings>div{
+            padding: 10px 60px 10px 60px;
+            display: flex;
+            justify-content: space-between;
+            background-color: white;
+        }
+        #cart_datas img{
+            width: 40%;
+        }
+        #cart_datas{
+            padding: 0px 60px 0px 60px;
+            background-color: white;
+        }
+        #cart_datas>div{
+            display: flex;
+        }
+        #cart_datas button{
+            width: 100%;
+            margin-top: 15px;
+            margin-bottom: 25px;
+            font-size: 30px;
+            background-color: white;
+            color: #2261ff;
+            border: 1px solid
+#2261ff;
+padding: 5px;
+
+        }
+        
+    </style>
+</head>
+<body>
+    
+    <div id="header">
+       
+            <img src="https://international.jcrew.com/assets/retailer-specific/logo.svg" alt="logo">
+      
+    </div>
+    <div id="main">
+<div id="left">
+    <div id="delivery_method">
+        <h2>Delivery Method</h2>
+        <div>
+            <div>
+            <input type="radio" id="standard-delivery">
+            <label for="standard-delivery">Standard Delivery</label>
+            <p>Deliverd on before 7 july</p>
+        </div>
+          <div>
+            <label for="price">INR</label><span id="price_standard">1710.00</span>
+          </div>
+        </div>
+        <div>
+            <div>
+            <input type="radio" value="express-delivery" id="express-delivery">
+            <label for="express-delivery">Express Delivery</label>
+            <p>Deliverd on before 22 july</p>
+        </div>
+          <div>
+            <label for="price">INR</label><span id="price_express">2052.00</span>
+          </div>
+        </div>
+    </div>
+
+    <div id="adress_container">
+        <h2>Delivery Address</h2>
+        <div>
+        <input type="text" placeholder="First Name">
+        <input type="text" placeholder="Last Name">
+        </div>
+        <input type="text" placeholder="Country"><br>
+        <input type="text" placeholder="Address Line 1"><br>
+        <p>Start typing a street address or postcode</p>
+        <input type="text" placeholder="Address Line 2"><br>
+        <div>
+            <input type="text" placeholder="Postal Code">
+            <input type="text" placeholder="City">
+        </div>
+        <input type="checkbox" id="saveaddress"><label for="saveaddress">Save this address for my next purchase</label><br>
+        <input type="text" placeholder="8123465789"><br>
+        <input type="text" placeholder="Email address"><br>
+        <span><img src="https://international.jcrew.com/assets/images/common/carbon_neutral.svg" alt=""></span> <label for="">Your order is 100% Carbon Neutral</label> <br>
+
+        <p>Powered by <span>esw</span></p>
+
+        <div>
+            <input type="checkbox" id="agree"> <label for="agree">I have read and consent to eShopWorld processing my information in accordance with the Privacy Statement and Cookie Policy.</label>
+        </div>
+
+        <button>CONTINUE TO PAYMENT</button>
+
+
+    </div>
+
+    <div id="payment">Payment</div>
+</div>
+<div id="right">
+    <div id="cart_data">
+        <button id="back_cart">BACK TO CART</button>
+    </div>
+    <div id="cart_items">
+
+    </div>
+ 
+    <div id="cart_datas">
+
+    
+    </div>
+    
+    <div id="billings">
+      <hr>
+        <div>
+           <label for="items">Items</label>
+           <span><span>INR</span><span>550000</span></span>
+        </div>
+        <div>
+           <label for="items">Delivery</label>
+           <span><span>INR</span><span>2200</span></span>
+        </div>
+        <div>
+           <label for="items">Total</label>
+           <span><span>INR</span><span>3300</span></span>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+</html>
+<script src="./append.js"></script>
