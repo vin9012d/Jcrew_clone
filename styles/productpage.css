@@ -1,0 +1,97 @@
+p{
+    font-size: 14px;
+}
+
+#product_detail{
+    display: flex;
+    width: 80%;
+    margin: auto;
+    justify-content: space-between;
+}
+#product_detail>img{
+    width: 60%;
+    margin-right: 20px;
+}
+
+#detailed_info{
+    padding: 10px;
+    width: 30%;
+}
+#color{  
+    display: flex;
+    
+}
+#color>div{
+    background-color: green;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+#color>div:hover{
+    width: 35px;
+    height: 35px;
+}
+#color>div:nth-child(2){
+    background-color: red;
+}
+#color>div:nth-child(3){
+    background-color: teal;
+}
+#color>div:nth-child(4){
+    background-color: black;
+}
+#color>div:last-child{
+    background-color: yellow;
+}
+
+#size{
+    display: grid;
+    flex-wrap: wrap;
+    grid-template-columns: repeat(3,1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+}
+#size>div{
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    margin: auto;
+    padding: 5px;
+    border: 0.5px solid grey;
+}
+#size>div:hover{
+    background-color: green;
+    cursor: pointer;
+}
+
+#qunatity_div{
+    display: flex;
+    margin-bottom: 20px;
+}
+#qunatity_div>select{
+    margin: auto;
+    padding: 5px;
+}
+
+#checkout_div>#checkout{
+    width: 80%;
+    padding: 10px;
+    background-color: black;
+    color: white;
+}
+#checkout_div>button:nth-child(2){
+    padding: 10px;
+}
+
+#rece_para{
+    margin-left: 5%;
+}
+#recently_viewed{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    overflow-y: auto;
+    margin-bottom: 20px;
+}
