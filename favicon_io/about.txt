@@ -1,0 +1,6 @@
+This favicon was generated using the following font:
+
+- Font Title: Mali
+- Font Author: Copyright 2018 The Mali Project Authors (https://github.com/cadsondemak/Mali)
+- Font Source: http://fonts.gstatic.com/s/mali/v9/N0ba2SRONuN4eCrODlxxOd8.ttf
+- Font License: SIL Open Font License, 1.1 (http://scripts.sil.org/OFL))
