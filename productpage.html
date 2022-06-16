@@ -13,7 +13,7 @@
     <div id = "navbar">
     </div>
 
-    <h4>Have a question? We can help.</h4>
+    <h4 id = "have_question">Have a question? We can help.</h4>
     <hr>
 
     <div id = "product_detail">
@@ -94,7 +94,11 @@
         </div>
     </div>
 
-    <!-- <p><b>Customer Also Love</b></p> -->
+    <p id = "rece_para"><b>Customer Also Love</b></p>
+
+    <div id = "same_category">
+
+    </div>
 
     <p id = "rece_para"><b>Recently Viewed</b></p>
 
@@ -128,9 +132,15 @@
     document.getElementById("back_footer").innerHTML = footer();
     document.getElementById("foot").innerHTML = foot()
 
-
-
     let obj = JSON.parse(localStorage.getItem("signupData"))
     console.log(obj)
     document.getElementById("LoginSignUp").innerText = obj[0].name
+
+    document.getElementById("logo").addEventListener("click",function(){
+        window.location.href = "index.html"
+    })
+    let kart = JSON.parse(localStorage.getItem("cartData"))
+    let wish = JSON.parse(localStorage.getItem("favItem"))
+    document.getElementById("cartlist_count").innerText = kart.length;
+    document.getElementById("wishlist_count").innerText = wish.length;
 </script>

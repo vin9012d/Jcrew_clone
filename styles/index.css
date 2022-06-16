@@ -34,6 +34,12 @@ body{
     justify-content: space-between;
     align-items: center;
 }
+#search>div:nth-child(4){
+    font-size: 20px;
+}
+#search>div:nth-child(5){
+    font-size: 20px;
+}
 
 div{
     cursor: pointer;
@@ -44,6 +50,22 @@ div{
     border: 0.5px solid rgb(33, 29, 29);
     border-radius: 3px;
 }
+
+#wishlist_count,#cartlist_count{
+    position: absolute;
+    margin-top: -35px;
+    margin-left: 15px;
+    background-color: black;
+    color: white;
+    padding: 0px 5px 0px 5px;
+    font-size: 12px;
+    border-radius: 50%;
+}
+
+#have_question{
+    padding: 20px;
+}
+
 
  /* ---------------------------------------------------------------------------------------------------------------------- */
 
@@ -70,8 +92,9 @@ h1,h4,h2,h3{
     width: 35%;
     margin: auto;
     display: flex;
+    padding: 20px;
     justify-content: space-between;
-    margin-bottom: 10px;
+    
  }
  #foot>div{
     width: 30%;

@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FAVORITE | J.Crew</title>
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.1.1/css/all.css">
     <link rel="stylesheet" href="/css/women.css">
     <link rel="icon" href="https://www.jcrew.com/favicon.ico">
     <link rel="stylesheet" href="./styles/women.css">
@@ -16,24 +17,25 @@
     <!-- --------------------------------------------------Navbar---------------------------------------------------------->
     <div id = "navbar">
     </div>
-    <h4>Have a question? We can help.</h4>
+    <h4 id = "have_question">Have a question? We can help.</h4>
     <hr>
 
-    <!-- --------------------------------------------------Navbar---------------------------------------------------------- -->
+    <!-- ----------------------------------------------------------------------------------------------------------------- -->
+
+
     <h3 id="intro">YOUR WISHLIST</h3>
     <div id="products_append">
         <!-- append products here -->
     </div>
 
 
-        <!-- ----------------------------------------------------Footer Part--------------------------------------------------- --> 
+    <!-- ----------------------------------------------------Footer Part--------------------------------------------------- --> 
 
-<hr>
-<div id = "foot"></div>
+    <hr>
+    <div id = "foot"></div>
+    <div id = "back_footer"></div>
 
-<div id = "back_footer"></div>
-
-<!-- -------------------------------------------------------------------------------------------------------------------- --> 
+    <!-- -------------------------------------------------------------------------------------------------------------------- --> 
 </body>
 </html>
 
@@ -127,14 +129,14 @@ function wishlist(arg,arrayFav,stk){
 </script>
 <script src="https://kit.fontawesome.com/448b55d940.js" crossorigin="anonymous"></script>
 
+<!-- ----------------------------------------------------------Common------------------------------------------------------------------ -->
+
 <script type = "module">
     import navbar from './components/navbar.js';
     import {footer,foot} from './components/backfooter.js'
     document.getElementById("navbar").innerHTML = navbar();
     document.getElementById("back_footer").innerHTML = footer();
     document.getElementById("foot").innerHTML = foot();
-
-
 
     document.getElementById("logo").addEventListener("click",function(){
         window.location.href = "index.html"
@@ -144,5 +146,12 @@ function wishlist(arg,arrayFav,stk){
     let obj = JSON.parse(localStorage.getItem("signupData"))
     console.log(obj)
     document.getElementById("LoginSignUp").innerText = obj[0].name
+
+    let kart = JSON.parse(localStorage.getItem("cartData"))
+    let wish = JSON.parse(localStorage.getItem("favItem"))
+    document.getElementById("cartlist_count").innerText = kart.length;
+    document.getElementById("wishlist_count").innerText = wish.length;
     
 </script>
+
+<!-- ----------------------------------------------------------Common------------------------------------------------------------------ -->

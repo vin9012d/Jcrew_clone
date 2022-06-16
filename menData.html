@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Man's Clothing | J.Crew</title>
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.1.1/css/all.css">
-    <title>Kid's Clothing | J.Crew</title>
     <link rel="icon" href="https://www.jcrew.com/favicon.ico">
     <link rel="stylesheet" href="./styles/women.css">
     <link rel="stylesheet" href="./styles/index.css">
 
 </head>
 <body>
+    
     <!-- --------------------------------------------------Navbar---------------------------------------------------------->
     <div id = "navbar">
     </div>
@@ -19,8 +20,22 @@
     <hr>
 
     <!-- --------------------------------------------------Navbar---------------------------------------------------------- -->
-    <h3 id="intro">SHOP ALL BOY'S & GIRL'S CLOTHING</h3>
-
+    <h3 id="intro">SHOP ALL MAN'S CLOTHING</h3>
+    <p id="tagline">Shop by Size & fit</p>
+    <div id="sizes">
+        <!-- <div> -->
+            <div>XS</div>
+            <div>S</div>
+            <div>M</div>
+            <div>L</div>
+            <div>X</div>
+            <div>XL</div>
+            <div>XXL</div>
+            <div>SLIM</div>
+            <div>TALL</div>
+        <!-- </div> -->
+        
+    </div>
     <div id="filter-bar">
         <select name="Filters" id="filter" onchange="attireFilter()">
             <option value="usual">Category</option>
@@ -38,9 +53,9 @@
     <div id="products_append">
         <!-- append products here -->
     </div>
-   
+    
 
-    <!-- ----------------------------------------------------Footer Part--------------------------------------------------- --> 
+     <!-- ----------------------------------------------------Footer Part--------------------------------------------------- --> 
 
 <hr>
 <div id = "foot"></div>
@@ -51,8 +66,8 @@
 </body>
 </html>
 
-<!-- <script src="./scripts/kidsArr.js"></script> -->
-<script src="./scripts/kidsP.js" type="module"></script>
+<!-- <script src="./script/manArr.js"></script> -->
+<script src="./scripts/manP.js" type="module"></script>
 <script src="https://kit.fontawesome.com/448b55d940.js" crossorigin="anonymous"></script>
 <script type = "module">
     import navbar from './components/navbar.js';
@@ -74,6 +89,6 @@
     let kart = JSON.parse(localStorage.getItem("cartData"))
     let wish = JSON.parse(localStorage.getItem("favItem"))
     document.getElementById("cartlist_count").innerText = kart.length;
-    document.getElementById("wishlist_count").innerText = wish.length
+    document.getElementById("wishlist_count").innerText = wish.length;
     
 </script>

@@ -1,11 +1,17 @@
 let obj = JSON.parse(localStorage.getItem("product_detail"));
 
-
+let prod_type = obj.category;
+console.log(prod_type)
 document.getElementById("product_image").src = obj.imgUrl
 document.getElementById("product_name").innerText = obj.name
 document.getElementById("product_price").innerText =  "Rs.  1000"
 document.getElementById("Striked_price").innerText = "Rs. " + obj.strikePrice
-document.getElementById("discount").innerText = obj.discount
+if(obj.discount==undefined){
+    document.getElementById("discount").innerText = ""
+}else{
+    document.getElementById("discount").innerText = obj.discount
+}
+
 document.getElementById("description").innerText = obj.description
 
 let size = document.getElementById("size").children;
@@ -67,3 +73,32 @@ document.getElementById("checkout").addEventListener("click",function(){
     cartArr.push(obj)
     localStorage.setItem("cartData",JSON.stringify(cartArr))
 })
+
+if(prod_type=="women"){
+
+    let arr = JSON.parse(localStorage.getItem("womenArr"));
+
+    arr.forEach(function(el){
+
+        let card = document.createElement("div");
+
+        let image = document.createElement("img");
+        image.src = el.imgUrl;
+        image.addEventListener("click",function(){
+            window.location.href = "productpage.html";
+            localStorage.setItem("product_detail",JSON.stringify(el))
+        })
+
+        let name = document.createElement("p");
+        name.innerText = el.name;
+
+        let price = document.createElement("p");
+        price.innerText = el.strikePrice
+
+        card.append(image,name,price)
+
+        document.getElementById("same_category").append(card)
+    })
+    
+    
+}

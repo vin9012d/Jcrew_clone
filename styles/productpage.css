@@ -94,8 +94,28 @@ p{
     background-color: black;
     color: white;
 }
+#checkout_div>#checkout:hover{
+    background-color: grey;
+    cursor: pointer;
+    border: 2px solid grey;
+}
 #checkout_div>button:nth-child(2){
     padding: 10px;
+}
+
+#same_category{
+    margin: auto;
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    grid-template-rows: repeat(1,1fr);
+    gap: 20px;
+}
+#same_category>div{
+    width: 100%;
+}
+#same_category>div>img{
+    width: 100%;
 }
 
 #rece_para{
