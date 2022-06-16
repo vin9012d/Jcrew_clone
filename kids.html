@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.1.1/css/all.css">
+    <title>Kid's Clothing | J.Crew</title>
+    <link rel="icon" href="https://www.jcrew.com/favicon.ico">
+    <link rel="stylesheet" href="./styles/women.css">
+    <link rel="stylesheet" href="./styles/index.css">
+
+</head>
+<body>
+    <!-- --------------------------------------------------Navbar---------------------------------------------------------->
+    <div id = "navbar">
+    </div>
+    <h4>Have a question? We can help.</h4>
+    <hr>
+
+    <!-- --------------------------------------------------Navbar---------------------------------------------------------- -->
+    <h3 id="intro">SHOP ALL BOY'S & GIRL'S CLOTHING</h3>
+
+    <div id="filter-bar">
+        <select name="Filters" id="filter" onchange="attireFilter()">
+            <option value="usual">Category</option>
+            <option value="clothing">Clothing</option>
+            <option value="accessories">Accessories</option>
+            <option value="shoes">Shoes</option>
+            
+        </select>
+        <select name="" id="sorting" onchange="sorting()">
+            <option value="usual">Featured</option>
+            <option value="LTH">Price: Low to High</option>
+            <option value="HTL">Price: High to Low</option>
+        </select>
+    </div>
+    <div id="products_append">
+        <!-- append products here -->
+    </div>
+   
+
+    <!-- ----------------------------------------------------Footer Part--------------------------------------------------- --> 
+
+<hr>
+<div id = "foot"></div>
+
+<div id = "back_footer"></div>
+
+<!-- -------------------------------------------------------------------------------------------------------------------- --> 
+</body>
+</html>
+
+<script src="./scripts/kidsArr.js"></script>
+<script src="./scripts/kidsP.js" type="module"></script>
+<script src="https://kit.fontawesome.com/448b55d940.js" crossorigin="anonymous"></script>
+<script type = "module">
+    import navbar from './components/navbar.js';
+    import {footer,foot} from './components/backfooter.js'
+    document.getElementById("navbar").innerHTML = navbar();
+    document.getElementById("back_footer").innerHTML = footer();
+    document.getElementById("foot").innerHTML = foot();
+
+
+
+    document.getElementById("logo").addEventListener("click",function(){
+        window.location.href = "index.html"
+    })
+    let query = document.getElementById("LoginSignUp")
+
+    let obj = JSON.parse(localStorage.getItem("signupData"))
+    console.log(obj)
+    document.getElementById("LoginSignUp").innerText = obj[0].name
+    
+</script>

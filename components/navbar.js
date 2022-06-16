@@ -5,7 +5,7 @@ function navbar () {
             <div><a href = "https://www.google.com/">New</a></div>
             <div>Women</div>
             <div>Men</div>
-            <div>Kids</div>
+            <div><a href = "kids.html">Kids</a></div>
             <div>Swim</div>
             <div>Cashmare</div>
             <div>Home</div>
@@ -17,8 +17,8 @@ function navbar () {
             <input type = "text" placeholder ="Search j.crew">
             <i class="fa-light fa-magnifying-glass"></i>
             <div id = "LoginSignUp">Sign In</div>
-            <div><i class="fa-light fa-heart"></i></div>
-            <div><i class="fa-light fa-bag-shopping"></i></div>
+            <div><a href = "wishlist.html"><i class="fa-light fa-heart"></i></a></div>
+            <div><a href = "cart.html"><i class="fa-light fa-bag-shopping"></i></a></div>
 
         </div>  `
 }

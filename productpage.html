@@ -127,4 +127,10 @@
     document.getElementById("navbar").innerHTML = navbar()
     document.getElementById("back_footer").innerHTML = footer();
     document.getElementById("foot").innerHTML = foot()
+
+
+
+    let obj = JSON.parse(localStorage.getItem("signupData"))
+    console.log(obj)
+    document.getElementById("LoginSignUp").innerText = obj[0].name
 </script>
