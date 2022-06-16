@@ -70,6 +70,7 @@ div{
  /* ---------------------------------------------------------------------------------------------------------------------- */
 
 h1,h4,h2,h3{
+    padding: 20px;
     text-align: center;
 }
 #offer>img{
@@ -175,6 +176,7 @@ h1,h4,h2,h3{
     width: 20%;
     display: flex;
     justify-content: space-between;
+    padding-bottom: 15px;
 }   
 .fa-solid{
     font-size: 24px;
@@ -185,9 +187,11 @@ h1,h4,h2,h3{
 }
 
 #company_logo{
+    padding: 10px;
     display: flex;
     width: 14%;
     justify-content: space-between;
+    padding-bottom: 15px;
 }
 #company_logo>img{
     background-color: antiquewhite;
@@ -209,6 +213,7 @@ h1,h4,h2,h3{
 
 
 #products{
+    padding: 20px;
     width: 65%;
     margin: auto;
     display: flex;
