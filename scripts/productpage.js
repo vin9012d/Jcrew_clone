@@ -4,7 +4,7 @@ let prod_type = obj.category;
 console.log(prod_type)
 document.getElementById("product_image").src = obj.imgUrl
 document.getElementById("product_name").innerText = obj.name
-document.getElementById("product_price").innerText =  "Rs.  1000"
+document.getElementById("product_price").innerText = "Rs. "+  obj.price
 document.getElementById("Striked_price").innerText = "Rs. " + obj.strikePrice
 if(obj.discount==undefined){
     document.getElementById("discount").innerText = ""
@@ -71,34 +71,63 @@ document.getElementById("checkout").addEventListener("click",function(){
     obj.quantity = qua;
 
     cartArr.push(obj)
+    document.getElementById("cartlist_count").innerText = cartArr.length;
     localStorage.setItem("cartData",JSON.stringify(cartArr))
 })
 
-if(prod_type=="women"){
 
-    let arr = JSON.parse(localStorage.getItem("womenArr"));
+
+let appendSame = (arr) => {
+    document.getElementById("same_category").innerHTML = null
 
     arr.forEach(function(el){
-
+    
         let card = document.createElement("div");
-
+    
         let image = document.createElement("img");
         image.src = el.imgUrl;
         image.addEventListener("click",function(){
+            card.style.border = "1px solid black"
             window.location.href = "productpage.html";
             localStorage.setItem("product_detail",JSON.stringify(el))
         })
-
+    
         let name = document.createElement("p");
         name.innerText = el.name;
+        name.style.fontWeight = "bold"
+    
+        let price_div = document.createElement("div")
+        price_div.style.fontWeight = "bold"
+        price_div.style.display = "flex";
+        price_div.style.width = "70%"
+        price_div.style.justifyContent = "space-between";
+
+        let stprice = document.createElement("p");
+        stprice.style.fontWeight = "bold"
+        stprice.innerText = "INR: " + el.price;
+        stprice.style.textDecoration = "line-through";
 
         let price = document.createElement("p");
-        price.innerText = el.strikePrice
+        price.innerText = "INR: " + el.strikePrice;
+        price.style.color = "red";
 
-        card.append(image,name,price)
-
+        price_div.append(stprice,price)
+    
+        card.append(image,name,price_div)
+    
         document.getElementById("same_category").append(card)
-    })
-    
-    
+    });
 }
+
+if(prod_type=="women"){
+    let arrW = JSON.parse(localStorage.getItem("womenArr"));
+    appendSame(arrW);   
+}else if(prod_type=="men"){
+    let arrM = JSON.parse(localStorage.getItem("Man"));
+    appendSame(arrM)
+}else{
+    let kidS = JSON.parse(localStorage.getItem("kids"));
+    appendSame(kidS)
+}
+
+

@@ -26,8 +26,6 @@ function displayProduct(array,box,arrayFav){
                 //this will going to add element to the wishlist
                 strike = !strike;
             
-                
-
             }
             else{
                 itag.setAttribute("class","fa-regular fa-heart fa-lg")
@@ -35,8 +33,7 @@ function displayProduct(array,box,arrayFav){
                 wishlist(el,arrayFav,strike)
                 //this will going to delete the element which is meant to be deleted
                 strike = !strike;
-               
-                
+    
             }
             
         })

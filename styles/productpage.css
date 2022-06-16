@@ -17,14 +17,21 @@ p{
     margin-right: 20px;
 }
 #product_name{
+    padding: 0;
     text-align: left;
 }
 #product_price{
+    padding: 0;
     text-align: left;
     text-decoration: line-through;
 }
 #Striked_price{
+    padding: 0;
     text-align: left;
+}
+#discount{
+    color: red;
+    font-weight: bold;
 }
 #detailed_info{
     padding: 10px;
@@ -104,18 +111,23 @@ p{
 }
 
 #same_category{
-    margin: auto;
+    padding: 10px;
     width: 90%;
-    display: grid;
-    grid-template-columns: repeat(5,1fr);
-    grid-template-rows: repeat(1,1fr);
-    gap: 20px;
+    margin: auto;
+    display: flex;
+    overflow-y: auto;
+    margin-bottom: 20px;
+    overflow-y: hidden;
+   
 }
-#same_category>div{
-    width: 100%;
+#same_category>div{  
+    padding: 0px 10px 20px 10px;
+    height: 300px;
+    margin-right: 10px;
 }
+
 #same_category>div>img{
-    width: 100%;
+    height: 70%;
 }
 
 #rece_para{

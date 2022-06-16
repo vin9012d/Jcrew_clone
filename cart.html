@@ -116,13 +116,11 @@
 
     let kart = JSON.parse(localStorage.getItem("cartData"))
     let wish = JSON.parse(localStorage.getItem("favItem"))
+    document.getElementById("wishlist_count").innerText = wish.length;
     document.getElementById("cartlist_count").innerText = kart.length;
-    document.getElementById("wishlist_count").innerText = wish.length
+    
     
 </script>
-
-
-
 
 <script type="module">
     import { append_sb, append_sl } from "./scripts/cart.js";
