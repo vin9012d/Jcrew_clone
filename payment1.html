@@ -9,6 +9,7 @@
     <style>
         body{
             background-color: #f8f8f8;
+            font-family: sans-serif;
             
         }
         #header{
@@ -30,7 +31,8 @@
         }
         #delivery_method{
             box-sizing: border-box;
-            padding: 50px;
+            /* padding: 50px; */
+            padding: 10px 60px 10px 60px;
             /* width: 80%; */
             /* border: 1px solid red; */
             box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
@@ -42,6 +44,7 @@
             width: 100%;
             display: flex;
             justify-content: space-between;
+
         }
       
         #header img{
@@ -49,13 +52,19 @@
             margin: auto;
            width: 250px;
         }
-        #standard-delivery,#express-delivery{
-            /* font-size: 30px; */
-            height: 30px;
-            width: 30px;
-        }
+      
+      
         #standard-delivery+label,#express-delivery+label{
-            font-size: 30px;
+
+            /* font-family: Soleil-Regular; */
+            font-family: sans-serif;
+           font-weight: bold;
+        }
+        .delivery_date{
+           
+            margin-top: 5px;
+            margin-left: 13%;
+            font-size: 12px;
         }
        
         #adress_container{
@@ -100,7 +109,7 @@
         }
         #right{
          
-          
+          width: 30%;
             margin-top: 20px;
         }
         #billings>div{
@@ -148,8 +157,8 @@ padding: 5px;
         <div>
             <div>
             <input type="radio" id="standard-delivery">
-            <label for="standard-delivery">Standard Delivery</label>
-            <p>Deliverd on before 7 july</p>
+            <label for="standard-delivery">STANDARD Delivery</label>
+            <p class="delivery_date">Delivered on or before 7 july</p>
         </div>
           <div>
             <label for="price">INR</label><span id="price_standard">1710.00</span>
@@ -159,7 +168,7 @@ padding: 5px;
             <div>
             <input type="radio" value="express-delivery" id="express-delivery">
             <label for="express-delivery">Express Delivery</label>
-            <p>Deliverd on before 22 july</p>
+            <p class="delivery_date">Delivered on or before 22 july</p>
         </div>
           <div>
             <label for="price">INR</label><span id="price_express">2052.00</span>
