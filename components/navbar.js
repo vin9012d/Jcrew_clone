@@ -16,7 +16,7 @@ function navbar () {
         <div id ="search">
             <input type = "text" placeholder ="Search j.crew">
             <i class="fa-light fa-magnifying-glass"></i>
-            <div><a href = "#">Sign In</a></div>
+            <div id = "LoginSignUp">Sign In</div>
             <div><i class="fa-light fa-heart"></i></div>
             <div><i class="fa-light fa-bag-shopping"></i></div>
 

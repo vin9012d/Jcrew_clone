@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.1.1/css/all.css">
     <title>J.Crew : Clothes,Shoes,Accessories</title>
     <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="styles/signup.css">
     
 </head>
 <body>
@@ -16,6 +17,37 @@
     </div>
     <h4>Have a question? We can help.</h4>
     <hr>
+
+
+    <div id="signup-outer">
+        <div id="signup-form">
+          <input type="text" placeholder="Email Address*" id="signin-email" />
+          <div id="password-sec">
+            <input type="text" placeholder="Password*" id="signin-password" />
+            <div>
+              <i class="fa-solid fa-eye"></i>
+            </div>
+          </div>
+          <div id="newpass">
+            <div>
+              <input id="remember-checkbox" type="checkbox" />
+              <label for="remember-checkbox">Remember me</label>
+            </div>
+            <button id="passwordForget">Forgot Password?</button>
+          </div>
+          <button id="SignIn">SignIn</button>
+          <span id="policy"
+            >This site is protected by reCAPTCHA and the Google
+            <a href="#">Privacy Policy</a> and
+            <a href="#">Terms of Service</a> apply.</span
+          >
+          <div id="signup-option">
+            <span>Don't have an account</span>
+            <button id="SignUp">Sign Up Now</button>
+          </div>
+          <i class="fa-solid fa-xmark"></i>
+        </div>
+      </div>
 <!-- ----------------------------------------------------------------------------------------------------------------->
 
     
@@ -133,6 +165,7 @@
 <!-- -------------------------------------------------------------------------------------------------------------------- --> 
 </body>
 </html>
+<script src = "./scripts/signup.js"></script>
 <script src = "scripts/products.js"></script>
 <script type = "module">
 import navbar from './components/navbar.js';
@@ -140,4 +173,7 @@ import {footer,foot} from './components/backfooter.js'
 document.getElementById("navbar").innerHTML = navbar();
 document.getElementById("back_footer").innerHTML = footer();
 document.getElementById("foot").innerHTML = foot();
+
+document.getElementById("LoginSignUp").addEventListener("click",signupNow);
+
 </script>
