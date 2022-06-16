@@ -8,11 +8,24 @@ p{
     margin: auto;
     justify-content: space-between;
 }
+.wishlist{
+    position: absolute;
+    padding: 5px;
+}
 #product_detail>img{
     width: 60%;
     margin-right: 20px;
 }
-
+#product_name{
+    text-align: left;
+}
+#product_price{
+    text-align: left;
+    text-decoration: line-through;
+}
+#Striked_price{
+    text-align: left;
+}
 #detailed_info{
     padding: 10px;
     width: 30%;
@@ -62,7 +75,7 @@ p{
     border: 0.5px solid grey;
 }
 #size>div:hover{
-    background-color: green;
+    border: 2px solid black;
     cursor: pointer;
 }
 

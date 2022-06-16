@@ -17,7 +17,11 @@
     <hr>
 
     <div id = "product_detail">
-        <img id = "product_image" src = "https://www.jcrew.com/s7-img-facade/BI407_PP3536?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=540&hei=540">
+        <div id = "product_photo">
+            <i class="wishlist fa-light fa-heart"></i>
+            <img id = "product_image" src = "https://www.jcrew.com/s7-img-facade/BI407_PP3536?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=540&hei=540">
+        </div>
+        
         <div id = "detailed_info">
             <p>NEW COLOR</p>
             <h3 id = "product_name">National Park Foundation X J.Crew Made-in-the-USA graphic T-shirt</h3>
@@ -33,8 +37,9 @@
                 <p>Be The First To Write Review</p>
             </div>
             <h4 id = "product_price">Price Rs.</h4>
-            <p id = "Striked_price">striked</p>
-            <p>color</p>
+            <h4 id = "Striked_price">striked</h4>
+            <p id = "discount">Available Discount</p>
+            <p id = "color_type">Color</p>
             <div id = "color">
                 <div></div>
                 <div></div>
@@ -43,7 +48,7 @@
                 <div></div>
                 <div></div>
             </div>
-            <p>Size: Select A Size</p>
+            <p id = "size_type">Size:</p>
             <p><i>All Sizes Are US Sizes</i></p>
 
             <div id = "size">
@@ -115,6 +120,7 @@
 </body>
 </html>
 <script src = "scripts/productpage.js"></script>
+
 <script type = "module">
     import navbar from './components/navbar.js'
     import {footer,foot} from './components/backfooter.js'

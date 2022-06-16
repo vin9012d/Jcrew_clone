@@ -8,8 +8,13 @@ body{
     width: 90%;
     display: flex;
     padding: 15px;
+    background-color: white;
     justify-content: space-between;
     margin: auto;
+    position: sticky;
+    left: 0;
+    top: 0;
+    z-index: 3;
 }
 
 #logo{
