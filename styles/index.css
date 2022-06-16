@@ -5,10 +5,9 @@ body{
     
 }
 #navbar{
-    width: 90%;
     display: flex;
-    padding: 15px;
     background-color: white;
+    padding: 15px 50px 15px 50px;
     justify-content: space-between;
     margin: auto;
     position: sticky;
@@ -36,7 +35,7 @@ body{
     align-items: center;
 }
 
-section{
+div{
     cursor: pointer;
     font-size: 14px;
 }
@@ -72,6 +71,7 @@ h1,h4,h2,h3{
     margin: auto;
     display: flex;
     justify-content: space-between;
+    margin-bottom: 10px;
  }
  #foot>div{
     width: 30%;
@@ -110,7 +110,7 @@ h1,h4,h2,h3{
 }
 #footer>#content>div>p{
     margin: 0;
-    padding: 2px;
+    padding: 7px;
     width: 100%;
     
 }
