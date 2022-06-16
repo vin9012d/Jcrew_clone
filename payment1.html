@@ -66,14 +66,17 @@
             margin-left: 13%;
             font-size: 12px;
         }
+        #box1{
+            margin-bottom: 20px;
+        }
        
         #adress_container{
             background-color: white;
             box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
             margin-bottom: 25px;
-            padding: 0px 60px 0px 60px;
+            padding: 20px 60px 40px 60px;
         }
-        #adress_container>div{
+        #adress_container>form>div{
             display: flex;
             justify-content: space-between;
         }
@@ -82,18 +85,63 @@
             box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
             margin-bottom: 25px;
         }
-        #adress_container>input{
+        #adress_container>form>input{
             width: 100%;
             height: 40px;
             margin-top: 35px;
             box-sizing: border-box;
         }
-        #adress_container>div>input{
-            width: 35%;
+        #adress_container>form>div>input{
+            width: 45%;
             height: 40px;
             margin-top: 35px;
             box-sizing: border-box;
            
+        }
+        /* #mobile_number_div{
+            display: flex;
+            margin-left: 20px;
+        } */
+        #select{
+            margin-top: 35px;
+            height: 40px;
+            width: 15%;
+        }
+        #mobile_number_div>#mobile_number{
+            width: 90%;
+        }
+        #select+input{
+            width: 90%;
+        }
+        #typing{
+            margin-top:5px;
+            font-size: 12px;
+          
+        }
+        #typing+input{
+          
+            margin-top: 10px;
+        }
+        #saveaddress,#agree{
+            margin-top: 20px;
+            width: 15px;
+            height: 15px;
+            margin-right: 15px;
+        }
+        #continue{
+            padding: 10px;
+            width: 100%;
+            background-color: 
+#0161ff;
+color: white;
+border: none;
+margin-top: 20px;
+        }
+        #email{
+            margin-bottom: 10px;
+        }
+        #payment{
+            padding: 30px;
         }
         #cart_data{
             background-color:white;
@@ -111,22 +159,43 @@
          
           width: 30%;
             margin-top: 20px;
+
+            
         }
         #billings>div{
             padding: 10px 60px 10px 60px;
             display: flex;
             justify-content: space-between;
             background-color: white;
+            box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
         }
         #cart_datas img{
-            width: 40%;
+            width: 100%;
         }
         #cart_datas{
             padding: 0px 60px 0px 60px;
             background-color: white;
+            box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
         }
-        #cart_datas>div{
+        /* #cart_datas>div{
             display: flex;
+        } */
+        .box{
+            display: flex;
+            justify-content: space-between;
+        }
+        .box>div:first-child{
+            width: 30%;
+        }
+        .box>div:last-child{
+            width: 60%;
+        }
+       .box p{
+        margin-top: -5px;
+       }
+        .right>div{
+            display: flex;
+            justify-content: space-between;
         }
         #cart_datas button{
             width: 100%;
@@ -154,9 +223,9 @@ padding: 5px;
 <div id="left">
     <div id="delivery_method">
         <h2>Delivery Method</h2>
-        <div>
+        <div id="box1">
             <div>
-            <input type="radio" id="standard-delivery">
+            <input type="radio" id="standard-delivery" name="delivery">
             <label for="standard-delivery">STANDARD Delivery</label>
             <p class="delivery_date">Delivered on or before 7 july</p>
         </div>
@@ -166,7 +235,7 @@ padding: 5px;
         </div>
         <div>
             <div>
-            <input type="radio" value="express-delivery" id="express-delivery">
+            <input type="radio" value="express-delivery" id="express-delivery" name="delivery">
             <label for="express-delivery">Express Delivery</label>
             <p class="delivery_date">Delivered on or before 22 july</p>
         </div>
@@ -175,37 +244,51 @@ padding: 5px;
           </div>
         </div>
     </div>
-
+<!--------------------------------- Adress box------------------------------ -->
     <div id="adress_container">
         <h2>Delivery Address</h2>
+        <form action="" onsubmit="formData(event)" id="form">
         <div>
-        <input type="text" placeholder="First Name">
-        <input type="text" placeholder="Last Name">
+        <input type="text" placeholder="First Name*" required id="fname">
+        <input type="text" placeholder="Last Name*" id="lname" required>
         </div>
-        <input type="text" placeholder="Country"><br>
-        <input type="text" placeholder="Address Line 1"><br>
-        <p>Start typing a street address or postcode</p>
+        <input type="text" placeholder="Country*" required id="country"><br>
+        <input type="text" placeholder="Address Line 1*" required id="street"><br>
+        <p id="typing">Start typing a street address or postcode</p>
         <input type="text" placeholder="Address Line 2"><br>
         <div>
-            <input type="text" placeholder="Postal Code">
-            <input type="text" placeholder="City">
+            <input type="text" placeholder="Postal Code*" required id="pin">
+            <input type="text" placeholder="City*" required id="city">
         </div>
-        <input type="checkbox" id="saveaddress"><label for="saveaddress">Save this address for my next purchase</label><br>
-        <input type="text" placeholder="8123465789"><br>
-        <input type="text" placeholder="Email address"><br>
-        <span><img src="https://international.jcrew.com/assets/images/common/carbon_neutral.svg" alt=""></span> <label for="">Your order is 100% Carbon Neutral</label> <br>
+        <span>
+        <input type="checkbox" id="saveaddress"><label for="saveaddress">Save this address for my next purchase</label></span><br>
+        <div id="mobile_number_div">
+            <select name="" id="select">
+                <option value="+91">+91</option>
+                <option value="+1">+1</option>
+                <option value="+2">+2</option>
+                <option value="+3">+3</option>
+                <option value="+3">+4</option>
+                <option value="+3">+5</option>
+            </select>
+        <input type="text" placeholder="8123465789*" id="mobile_number" required>
+    </div>  <br>
+        <input type="text" id="email" placeholder="Email address*" required><br>
+        <span id="carbon"><img src="https://international.jcrew.com/assets/images/common/carbon_neutral.svg" alt=""> <label style="margin-left:10px ;" for="">Your order is 100% Carbon Neutral</label></span><br>
 
-        <p>Powered by <span>esw</span></p>
+        <p style="font-size: 10px; margin-left: 26px; margin-top: 5px;">Powered by <span style="font-size:15px ;">esw</span></p>
 
         <div>
+            <span>
             <input type="checkbox" id="agree"> <label for="agree">I have read and consent to eShopWorld processing my information in accordance with the Privacy Statement and Cookie Policy.</label>
+        </span>
         </div>
 
-        <button>CONTINUE TO PAYMENT</button>
+        <button id="continue" type="submit">CONTINUE TO PAYMENT</button>
 
 
     </div>
-
+</form>
     <div id="payment">Payment</div>
 </div>
 <div id="right">

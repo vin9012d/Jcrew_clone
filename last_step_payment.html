@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://kit.fontawesome.com/39a06da8de.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./otp.css">
     <style>
         body{
             background-color: 
@@ -33,9 +34,10 @@
             width: 100%;
             background-color: white;
             padding-bottom: 20px;
-            padding: 0px 70px 0px 70px;
-            border: solid 1px black;
-            border: 1px green solid;
+            padding: 10px 70px 0px 70px;
+            /* border: solid 1px black;
+            border: 1px green solid; */
+            box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
             padding-bottom: 25px;
         }
 
@@ -50,6 +52,7 @@
         }
         #Edit{
             text-decoration: underline;
+            cursor: pointer;
         }
         #country{
           margin-top: -10px;
@@ -58,6 +61,7 @@
             background-color: white;
             width: 100%;
             padding: 20px 70px 30px 70px;
+            box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
             
         }
         #pmt_check{
@@ -66,10 +70,12 @@
         }
         
         #card_div{
+            box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
             width: 100%;
             background-color: white;
             padding: 20px 70px 40px 70px;
-            border: solid 1px red;
+            /* border: solid 1px red; */
+            display: block;
         }
         #card>div{
             border: 1px solid black;
@@ -107,6 +113,7 @@
        #question{
        margin-top: 30px;
        font-size: 25px;
+       display: relative;
        }
         #card_data>div>input:first-child{
             width: 50%;
@@ -133,7 +140,26 @@
             background-color: black;
             color: white;
         }
-     
+        .tooltiptext{
+            visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  
+  /* Position the tooltip */
+  position: absolute;
+  
+ 
+ 
+        }
+        .tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+        /* ------------------------------------------------------ */
+       
     </style>
 </head>
 <body><div id="main">
@@ -143,12 +169,12 @@
             <div id="address">
                 <div>
                 <p id="name">Name</p>
-                <p id="Edit">Edit</p>
+                <p id="Edit" onclick="edit()">Edit</p>
             </div>
                 <p id="street">Street</p>
                 <div>
                 <p id="city">City</p>
-                <p id="pin">PIN</p>
+                <!-- <p id="pin">PIN</p> -->
             </div>
                 <p id="country">Country</p>
             </div>
@@ -158,7 +184,7 @@
             <span> <input type="checkbox" id="pmt_check" checked> <label for="pmt_check">Billing address same as delivery address
             </label> </span>
         </div>
-
+      <!-- -------------------------Credit Card Data---------------------------  -->
         <div id="card_div">
             <div id="card">
                <div> 
@@ -170,7 +196,10 @@
                 <div id="mm">
                     <input type="text" placeholder="MM/YY">
                     <input type="text" placeholder="CVV">
-                    <i class="fa-solid fa-circle-question" id="question"></i>
+                    <span class="tooltip">
+                    <i class="fa-solid fa-circle-question " id="question" ></i>
+                    <span class="tooltiptext">Please check last 3 digit of your card number</span>
+                </span>
                 </div>
                 <input type="text" id="card_name" placeholder="Name on card">
                 <div id="card_logo">
@@ -185,9 +214,39 @@
             </div>
             <p id="terms_condition">By clicking Pay Now, you agree to eShopWorld's Terms and Conditions.</p>
 
-            <button id="pay_now">PAY NOW</button>
+            <button id="pay_now" onclick="paynow(event)">PAY NOW</button>
+        </div>
+        <!-- ------------------------OTP Data--------------------- -->
+        <div id="otp">
+            <div id="top">
+                <img src="https://netsafe.hdfcbank.com/ACSWeb/auth/images/Mastercard_Securecode_bg1.gif" alt="mastercard">
+                 <img src="https://netsafe.hdfcbank.com/ACSWeb/auth/images/logo.png" alt="HDFC logo">
+            </div>
+    <hr>
+    <p>Authentetic transaction</p>
+    <hr>
+    <div>
+    <button id="otp_txt">
+        OTP
+    </button>
+    <div>
+        <p id="notification">Sucessfully sent otp on your regestere mobile number</p>
+    </div>
+    <p>Enter OTP</p>
+    <input type="text" id="enter_otp">
+    <p id="resend" onclick="resend()" >Resend OTP</p>
+    <div id="cancel_submit">
+        <button id="cancel">CANCEL</button>
+        <button id="submit" onclick="submit_otp()">SUBMIT OTP</button>
+    </div>
+    <div id="timer_div">This page will automatically timed out after <span id="timer_min">00:</span>:<span id="timer_seconds">00</span> seconds</div>
+    </div>
+    
+    
+    
         </div>
     </div>
 </div>
 </body>
 </html>
+<script src="./innerfunctionality.js"></script>
