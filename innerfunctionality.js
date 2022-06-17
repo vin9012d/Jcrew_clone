@@ -13,7 +13,9 @@ document.querySelector("#city").innerText=addressData.city;
 document.querySelector("#country").innerText=addressData.country;
 //Paynow button click
 function paynow(event){
-//    console.log(event.target)
+
+event.preventDefault();
+
 timer()
    let card_div=document.querySelector("#card_div");
    let otp=document.querySelector("#otp");

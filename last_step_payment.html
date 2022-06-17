@@ -360,17 +360,19 @@ padding: 5px;
                 <span><i class="fa-solid fa-credit-card"></i><label for="fa-solid" id="label_card">Card</label></span>
                </div>
             </div>
+            <form action="" onsubmit="paynow(event)">
             <div id="card_data">
-                <input type="text" placeholder="Card Number">
+               
+                <input type="text" placeholder="Card Number" required>
                 <div id="mm">
-                    <input type="text" placeholder="MM/YY">
-                    <input type="text" placeholder="CVV">
+                    <input type="text" placeholder="MM/YY" required>
+                    <input type="text" placeholder="CVV" required>
                     <span class="tooltip">
                     <i class="fa-solid fa-circle-question " id="question" ></i>
                     <span class="tooltiptext">Please check last 3 digit of your card number</span>
                 </span>
                 </div>
-                <input type="text" id="card_name" placeholder="Name on card">
+                <input type="text" id="card_name" placeholder="Name on card" required>
                 <div id="card_logo">
                     <img src="https://cdn.visa.com/v2/assets/images/logos/visa/blue/logo.png" alt="Visa">
                     <img src="https://brandeps.com/logo-download/V/Visa-Electron-logo-vector-01.svg" alt="Visa Electron">
@@ -383,8 +385,9 @@ padding: 5px;
             </div>
             <p id="terms_condition">By clicking Pay Now, you agree to eShopWorld's Terms and Conditions.</p>
 
-            <button id="pay_now" onclick="paynow(event)">PAY NOW</button>
+            <button id="pay_now"  type="submit">PAY NOW</button>
         </div>
+    </form>
         <!-- ------------------------OTP Data--------------------- -->
         <div id="otp">
             <div id="top">
