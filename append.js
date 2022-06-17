@@ -2,38 +2,7 @@ let data=[
     {image:"https://www.jcrew.com/s7-img-facade/BI574_PT1317_m?wid=416",price:100,quantity:1, size:"M",color:"Navy Blue", name:"product dredd" },
     {image:"https://www.jcrew.com/s7-img-facade/BI574_PT1317_m?wid=416",price:150,quantity:2, size:"M",color:"Army green",name:"product crecc"}
 ]
-let ManArr = [
-    {
-      "imgUrl": "https://www.jcrew.com/s7-img-facade/J1785_WT0002_m?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=540&hei=540",
-      "name": "Garment-dyed slub cotton crewneck T-shirt",
-      "description": "These supersoft tees are made from garment-dyed slub cotton, which means each one will have a rich, perfectly imperfect color that will softly fade over time.",
-      "price": "3861",
-      "strikePrice": "2499",
-      "type": "clothing",
-      "category": "men",
-      "id": 1
-    },
-    {
-      "imgUrl": "https://www.jcrew.com/s7-img-facade/AZ684_BL8133?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=540&hei=540",
-      "name": "Double-knit jogger pant",
-      "description": "Originally developed in the early 1900s, this double-layer fabric traps heat, making it ideal for layering (and lounging around the house). Fun fact: This fabric was worn by the first Everest expedition to reach the summit.",
-      "price": "9096",
-      "strikePrice": "7999",
-      "type": "clothing",
-      "category": "men",
-      "id": 2
-    },
-    {
-      "imgUrl": "https://www.jcrew.com/s7-img-facade/H8622_GY6597?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=540&hei=540",
-      "name": "  Stretch boxer briefs",
-      "description": "We feel our unmentionables should be worth mentioning, so we knit these boxer briefs in soft cotton-spandex and added a waistband that's been brushed for extra comfort.",
-      "price": "2880",
-      "strikePrice": "2499",
-      "type": "clothing",
-      "category": "men",
-      "id": 3
-    },
-]
+
 let data1=JSON.parse(localStorage.getItem("cartData"));
 var sum;
 displayData(data)
@@ -50,7 +19,7 @@ let right=document.createElement("div");
 right.setAttribute("class","right")
 
 let image=document.createElement("img");
-image.src=ele.image;
+image.src=ele.imgUrl;
 let name=document.createElement("p");
 name.innerText=ele.name;
 let price_name=document.createElement("p");
@@ -64,7 +33,7 @@ size_name.innerText="size:"
 let price_div=document.createElement("div");
 let price=document.createElement("p")
 price.innerText=ele.price;
-sum=sum+ele.price;
+sum=sum+(ele.price*ele.quantity);
 let quantity_div=document.createElement("div");
 let quantity=document.createElement("p")
 quantity.innerText=ele.quantity;

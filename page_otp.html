@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input{
+            box-sizing: border-box;
+          
+        }
+        #otp{
+            width: 100%;
+            margin: auto;
+            box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+            padding: 20px 60px 20px 60px;
+      
+        }
+        #top{
+            display: flex;
+            justify-content: space-between;
+         
+        }
+
+        #otp_txt{
+            width: 100%;
+            background-color: blue;
+            color: white;
+            padding: 10px;
+            border: none; 
+        }
+        #notification{
+            color: green;
+        }
+        #enter_otp{
+            width: 100%;
+            padding: 10px;
+        }
+        #resend{
+            text-align: end;
+            color: blue;
+        }
+        #cancel{
+padding: 10px;
+            background-color: white;
+            color: blue;
+            border: blue 1px solid;
+        }
+        #submit{
+            padding: 10px;
+            background-color: blue;
+            color: white;
+            border: none;
+        }
+        #cancel_submit{
+            display: flex;
+            justify-content: space-between;
+        }
+      #cancel_submit>button:first-child{
+        width: 30%;
+      }
+      #cancel_submit>button:last-child{
+        width: 60%;
+      }
+      #timer_div{
+        margin-top: 20px;
+      }
+      #timer_min,#timer_seconds{
+        color: red;
+      }
+    </style>
+</head>
+<body>
+    <div id="otp">
+        <div id="top">
+            <img src="https://netsafe.hdfcbank.com/ACSWeb/auth/images/Mastercard_Securecode_bg1.gif" alt="mastercard">
+             <img src="https://netsafe.hdfcbank.com/ACSWeb/auth/images/logo.png" alt="HDFC logo">
+        </div>
+<hr>
+<p>Authentetic transaction</p>
+<hr>
+<div>
+<button id="otp_txt">
+    OTP
+</button>
+<div>
+    <p id="notification">Sucessfully sent otp on your regestere mobile number</p>
+</div>
+<p>Enter OTP</p>
+<input type="text" id="enter_otp">
+<p id="resend">Resend OTP</p>
+<div id="cancel_submit">
+    <button id="cancel">CANCEL</button>
+    <button id="submit">SUBMIT OTP</button>
+</div>
+<div id="timer_div">This page will automatically timed out after <span id="timer_min">00:</span>:<span id="timer_seconds">00</span> seconds</div>
+</div>
+
+
+
+    </div>
+</body>
+</html>
+<script src="./timer.js"></script>
