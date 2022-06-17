@@ -4,7 +4,7 @@ let itemsCount = (data, totalItems) => {
     let count = 0;
 
     data.forEach(el => {
-        count += el.quantity;
+        count += Number(el.quantity);
     });
 
     totalItems.innerText = count > 1 ? `${count} Items` : totalItems.innerText = `${count} Item`;

@@ -7,6 +7,7 @@ body{
 #navbar{
     display: flex;
     background-color: white;
+    font-size: 14px;
     padding: 15px 50px 15px 50px;
     justify-content: space-between;
     margin: auto;
@@ -41,7 +42,7 @@ body{
     font-size: 20px;
 }
 
-div{
+#search>div{
     cursor: pointer;
     font-size: 14px;
 }
@@ -63,15 +64,16 @@ div{
 }
 
 #have_question{
+    text-align: center;
     padding: 20px;
 }
 
 
  /* ---------------------------------------------------------------------------------------------------------------------- */
 
-h1,h4,h2,h3{
-    padding: 20px;
+#headings{
     text-align: center;
+    padding: 15px;
 }
 #offer>img{
     width: 100%;
