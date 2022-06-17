@@ -140,3 +140,35 @@ p{
     overflow-y: auto;
     margin-bottom: 20px;
 }
+@media all and (min-width:450px) and (max-width:850px){
+
+  
+    #product_detail{
+        display: block;
+    }
+    #product_photo{
+        width: 80%;
+        margin: auto;
+    }
+    #product_photo>img{
+        width: 100%;
+    }
+
+    #detailed_info{
+        padding: 10px;
+        width: 80%;
+        margin: auto;
+    }
+}
+
+@media all and (min-width:200px) and (max-width:449px){
+    #product_detail{
+        display: block;
+    }
+    
+    #detailed_info{
+        padding: 10px;
+        width: 80%;
+        margin: auto;
+    }
+}
