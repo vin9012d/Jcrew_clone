@@ -8,17 +8,40 @@
     <script src="https://kit.fontawesome.com/39a06da8de.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./otp.css">
     <style>
-        body{
-            background-color: 
-#f8f8f8;
+             body{
+            background-color: #f8f8f8;
+            font-family: sans-serif;
+            margin: 0px;
+            padding:0px,
+            
+        }
+        #header{
+            /* width: 80%; */
+            /* margin: auto; */
+        
+            padding: 10px;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+            background-color: white;
+            text-align: center;
+         
+        }
+        #header img{
+            height: 50px;
         }
         #main{
-            width: 80%;
+            /* width: 70%; */
             display: flex;
             margin: auto;
+            margin-top: 30px;
+            justify-content: center;
         }
         #left{
-            width: 34%;
+            width: 35%;
+            margin-right: 30px;
+            /* border: solid 1px red; */
+            padding: 10px 70px 20px 70px;
+            box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+            background-color: white;
             
         }
         #address{
@@ -34,11 +57,13 @@
             width: 100%;
             background-color: white;
             padding-bottom: 20px;
-            padding: 10px 70px 0px 70px;
+            /* padding: 10px 70px 0px 70px; vinod*/
             /* border: solid 1px black;
             border: 1px green solid; */
-            box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+            /* box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
             padding-bottom: 25px;
+             */
+          
         }
 
         #address>div{
@@ -60,20 +85,22 @@
         #payment_check{
             background-color: white;
             width: 100%;
-            padding: 20px 70px 30px 70px;
-            box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+            /* padding: 20px 70px 30px 70px; */
+            /* box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px; */
+            padding-bottom: 50px;
             
         }
         #pmt_check{
             width: 20px;
             height: 20px;
+            
         }
         
         #card_div{
-            box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
-            width: 100%;
+            /* box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+            width: 100%; */
             background-color: white;
-            padding: 20px 70px 40px 70px;
+            /* padding: 20px 70px 40px 70px; */
             /* border: solid 1px red; */
             display: block;
         }
@@ -97,6 +124,7 @@
             
             margin: auto;
             padding: 30px;
+            background-color: #f8f8f8;
            
         }
         #card_data input {
@@ -158,11 +186,152 @@
         .tooltip:hover .tooltiptext {
   visibility: visible;
 }
-        /* ------------------------------------------------------ */
+#right{ 
+    width: 30%;
+    
+    
+
+}
+#back_cart{
+         width: 100%;
+         
+         padding: 5px;
+         font-size: 25px;
+         background-color: white;
+        
+        
+        }
+        #cart_data{
+            background-color: white;
+            padding: 10px 60px 10px 60px;
+        }
+#billings>div{
+            padding: 10px 60px 10px 60px;
+            display: flex;
+            justify-content: space-between;  
+            background-color: white;
+            box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+        }
+        #cart_datas img{
+            width: 100%;
+        }
+        #cart_datas{
+            padding: 20px 60px 0px 60px;
+            background-color: white;
+            box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+        }
+        /* #cart_datas>div{
+            display: flex;
+        } */
+        .box{
+            display: flex;
+            justify-content: space-between;
+        }
+        .box>div:first-child{
+            width: 30%;
+        }
+        .box>div:last-child{
+            width: 60%;
+        }
+       .box p{
+        margin-top: -5px;
+       }
+        .right>div{
+            display: flex;
+            justify-content: space-between;
+        }
+        #cart_datas button{
+            width: 100%;
+            margin-top: 15px;
+            margin-bottom: 25px;
+            font-size: 20px;
+            background-color: white;
+            color: #2261ff;
+            border: 1px solid
+#2261ff;
+padding: 5px;
+
+        }
+        /* ------------------------------------------------------ */      /* -----------------Responsive----------- */
+        @media only screen and (max-width: 850px) {
+            #main{
+                width: 100%;
+                /* border: 1px solid red; */
+                display: block;
+                margin: auto;
+            }
+            #left{
+               
+                width: 100%;
+                margin: auto;
+                margin-top: 30px;
+               
+            }
+            #right{
+                width: 100%;
+                margin: auto;
+                padding: 10px 70px 20px 70px;
+                background-color: white;
+                margin-top: 30px;
+            }
+            #header{
+                width: 100%;
+              padding: 0px 70px 0px 70px;
+            }
+        }
+
+                /* ----------------------------Toggle------------------------------- */
+                .overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0px;
+  left: 200px;
+  bottom: 100px;
+ 
+  background-color: rgba(0,0,0, 0.9);
+
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+.overlay-content {
+  position: relative;
+  top: 25%;
+  width: 80%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.overlay a:hover, .overlay a:focus {
+  color: #f1f1f1;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
        
     </style>
 </head>
-<body><div id="main">
+<body>
+    <div id="header">
+       
+        <img src="https://international.jcrew.com/assets/retailer-specific/logo.svg" alt="logo">
+  
+</div><div id="main">
     <div id="left">
         <div id="address_div">
             <h2>Delivery Address</h2>
@@ -246,7 +415,51 @@
     
         </div>
     </div>
+    <div id="right">
+        <div id="cart_data">
+            <button id="back_cart">BACK TO CART</button>
+        </div>
+        <div id="cart_items">
+        
+        </div>
+        
+        <div id="cart_datas">
+        
+        
+        </div>
+        <div id="billings">
+            <hr>
+              <div>
+                 <label for="items">Items</label>
+                 <span><span>INR </span><span id="raw_total"> 550000</span></span>
+                </div>
+                <div>
+                   <label for="items">Delivery</label>
+                   <span><span>INR</span><span id="delivery_price"> 1710</span></span>
+                </div>
+                <div>
+                   <label for="items">Total</label>
+                   <span><span>INR </span><span id="total_price"> 3300</span></span>
+              </div>
+          </div>
+    </div>
 </div>
+
+<!----------- Toggle ----------->
+<div id="myNav" class="overlay">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <div class="overlay-content">
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#">Clients</a>
+      <a href="#">Contact</a>
+    </div>
+  </div>
 </body>
 </html>
+<!-- <script type="module">
+    import cart from  "./cartData.js";
+    document.querySelector("#right").innerHTML=cart();
+</script> -->
 <script src="./innerfunctionality.js"></script>
+<script src="./append.js"></script>

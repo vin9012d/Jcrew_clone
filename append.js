@@ -2,8 +2,46 @@ let data=[
     {image:"https://www.jcrew.com/s7-img-facade/BI574_PT1317_m?wid=416",price:100,quantity:1, size:"M",color:"Navy Blue", name:"product dredd" },
     {image:"https://www.jcrew.com/s7-img-facade/BI574_PT1317_m?wid=416",price:150,quantity:2, size:"M",color:"Army green",name:"product crecc"}
 ]
+let ManArr = [
+    {
+      "imgUrl": "https://www.jcrew.com/s7-img-facade/J1785_WT0002_m?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=540&hei=540",
+      "name": "Garment-dyed slub cotton crewneck T-shirt",
+      "description": "These supersoft tees are made from garment-dyed slub cotton, which means each one will have a rich, perfectly imperfect color that will softly fade over time.",
+      "price": "3861",
+      "strikePrice": "2499",
+      "type": "clothing",
+      "category": "men",
+      "id": 1
+    },
+    {
+      "imgUrl": "https://www.jcrew.com/s7-img-facade/AZ684_BL8133?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=540&hei=540",
+      "name": "Double-knit jogger pant",
+      "description": "Originally developed in the early 1900s, this double-layer fabric traps heat, making it ideal for layering (and lounging around the house). Fun fact: This fabric was worn by the first Everest expedition to reach the summit.",
+      "price": "9096",
+      "strikePrice": "7999",
+      "type": "clothing",
+      "category": "men",
+      "id": 2
+    },
+    {
+      "imgUrl": "https://www.jcrew.com/s7-img-facade/H8622_GY6597?fmt=jpeg&qlt=90,0&resMode=sharp&op_usm=.1,0,0,0&crop=0,0,0,0&wid=540&hei=540",
+      "name": "  Stretch boxer briefs",
+      "description": "We feel our unmentionables should be worth mentioning, so we knit these boxer briefs in soft cotton-spandex and added a waistband that's been brushed for extra comfort.",
+      "price": "2880",
+      "strikePrice": "2499",
+      "type": "clothing",
+      "category": "men",
+      "id": 3
+    },
+]
+let data1=JSON.parse(localStorage.getItem("cartData"));
+var sum;
+displayData(data)
 
-data.forEach((ele)=>{
+function displayData(data){
+     sum=0;
+
+ data.forEach((ele)=>{
 let container=document.querySelector("#cart_datas")
 let box=document.createElement("div");
 box.setAttribute("class","box")
@@ -16,7 +54,7 @@ image.src=ele.image;
 let name=document.createElement("p");
 name.innerText=ele.name;
 let price_name=document.createElement("p");
-price_name.innerText="name:"
+price_name.innerText="price:"
 let quantity_name=document.createElement("p");
 quantity_name.innerText="quantity:"
 let color_name=document.createElement("p");
@@ -26,6 +64,7 @@ size_name.innerText="size:"
 let price_div=document.createElement("div");
 let price=document.createElement("p")
 price.innerText=ele.price;
+sum=sum+ele.price;
 let quantity_div=document.createElement("div");
 let quantity=document.createElement("p")
 quantity.innerText=ele.quantity;
@@ -37,6 +76,9 @@ let color=document.createElement("p")
 color.innerText=ele.color;
 let button=document.createElement("button");
 button.innerText="View More"
+button.addEventListener("click",function(){
+    openNav(ele)
+})
 left.append(image)
 price_div.append(price_name,price)
 
@@ -52,6 +94,11 @@ box.append(left,right)
 container.append(name,box,button)
 
 });
+document.querySelector("#raw_total").innerText=sum;
+let ans=sum+1710;
+document.querySelector("#total_price").innerText=ans;
+
+}
 
 function formData(event){
     event.preventDefault();
@@ -75,6 +122,7 @@ function formData(event){
     }
 
     localStorage.setItem("address",JSON.stringify(data))
+    window.location.href="last_step_payment.html"
 }
 else{
     alert("Accept the terms and conditins")
@@ -82,3 +130,45 @@ else{
 
 }
 
+function delivery(){
+    let sd=document.querySelector("#standard-delivery").checked;
+    let ed=document.querySelector("#express-delivery").checked;
+    if(sd==true){
+       document.querySelector("#delivery_price").innerText=1710.00;
+       let ans=sum+1710;
+       document.querySelector("#total_price").innerText=ans;
+    }else{
+        document.querySelector("#delivery_price").innerText=2052.00;
+        let ans=sum+2052;
+       document.querySelector("#total_price").innerText=ans;
+    }
+}
+
+
+
+function openNav(ele) {
+    let container=document.querySelector(".overlay-content");
+    container.innerHTML=null;
+ let box=document.createElement("div")
+box.setAttribute("class","box1")
+
+
+let image=document.createElement("img");
+image.src=ele.image;
+let name=document.createElement("p");
+name.innerText=ele.name;
+name.style.color="white"
+
+
+
+container.append(image,name)
+// document.getElementById("myNav").style="block";
+    document.getElementById("myNav").style.width = "70%";
+
+
+  }
+  
+  function closeNav() {
+    document.getElementById("myNav").style.width = "0%";
+    // document.getElementById("myNav").style="none";
+  }

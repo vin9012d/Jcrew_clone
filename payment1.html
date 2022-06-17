@@ -10,7 +10,8 @@
         body{
             background-color: #f8f8f8;
             font-family: sans-serif;
-            
+            margin: 0px;
+            padding:0px,
         }
         #header{
             /* width: 80%; */
@@ -50,7 +51,7 @@
         #header img{
             display: block;
             margin: auto;
-           width: 250px;
+           height: 50px;
         }
       
       
@@ -110,6 +111,7 @@
         #mobile_number_div>#mobile_number{
             width: 90%;
         }
+     
         #select+input{
             width: 90%;
         }
@@ -145,15 +147,17 @@ margin-top: 20px;
         }
         #cart_data{
             background-color:white;
-            border: solid 1px green;
+            /* border: solid 1px green; */
             padding: 10px 60px 10px 60px;
+            /* margin-bottom: -14px; */
         }
         #back_cart{
          width: 100%;
          /* padding: 10px 30px 10px 30px; */
          padding: 5px;
-         font-size: 25px;
+         font-size: 20px;
          background-color: white;
+    
         }
         #right{
          
@@ -173,7 +177,7 @@ margin-top: 20px;
             width: 100%;
         }
         #cart_datas{
-            padding: 0px 60px 0px 60px;
+            padding: 10px 60px 0px 60px;
             background-color: white;
             box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
         }
@@ -201,7 +205,7 @@ margin-top: 20px;
             width: 100%;
             margin-top: 15px;
             margin-bottom: 25px;
-            font-size: 30px;
+            font-size: 20px;
             background-color: white;
             color: #2261ff;
             border: 1px solid
@@ -209,11 +213,72 @@ margin-top: 20px;
 padding: 5px;
 
         }
+        /* -----------------Responsive----------- */
+        @media only screen and (max-width: 850px) {
+            #main{
+                width: 80%;
+                border: 1px solid red;
+                display: block;
+                margin: auto;
+            }
+            #left{
+                width: 100%;
+                margin: auto;
+            }
+            #right{
+                width: 100%;
+                margin: auto;
+            }
+        }
+
+        /* ----------------------------Toggle------------------------------- */
+        .overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0px;
+  left: 200px;
+  bottom: 100px;
+ 
+  background-color: rgba(0,0,0, 0.9);
+
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+.overlay-content {
+  position: relative;
+  top: 25%;
+  width: 80%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.overlay a:hover, .overlay a:focus {
+  color: #f1f1f1;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
         
     </style>
 </head>
 <body>
-    <a href="last_step_payment.html">last</a>
+   
     <div id="header">
        
             <img src="https://international.jcrew.com/assets/retailer-specific/logo.svg" alt="logo">
@@ -225,7 +290,7 @@ padding: 5px;
         <h2>Delivery Method</h2>
         <div id="box1">
             <div>
-            <input type="radio" id="standard-delivery" name="delivery">
+            <input type="radio" id="standard-delivery" onclick="delivery()" name="delivery">
             <label for="standard-delivery">STANDARD Delivery</label>
             <p class="delivery_date">Delivered on or before 7 july</p>
         </div>
@@ -235,7 +300,7 @@ padding: 5px;
         </div>
         <div>
             <div>
-            <input type="radio" value="express-delivery" id="express-delivery" name="delivery">
+            <input type="radio" value="express-delivery" id="express-delivery" onclick="delivery()" name="delivery">
             <label for="express-delivery">Express Delivery</label>
             <p class="delivery_date">Delivered on or before 22 july</p>
         </div>
@@ -253,7 +318,7 @@ padding: 5px;
         <input type="text" placeholder="Last Name*" id="lname" required>
         </div>
         <input type="text" placeholder="Country*" required id="country"><br>
-        <input type="text" placeholder="Address Line 1*" required id="street"><br>
+        <input type="text" placeholder="Address Line 1*" required id="street">
         <p id="typing">Start typing a street address or postcode</p>
         <input type="text" placeholder="Address Line 2"><br>
         <div>
@@ -272,7 +337,7 @@ padding: 5px;
                 <option value="+3">+5</option>
             </select>
         <input type="text" placeholder="8123465789*" id="mobile_number" required>
-    </div>  <br>
+    </div> 
         <input type="text" id="email" placeholder="Email address*" required><br>
         <span id="carbon"><img src="https://international.jcrew.com/assets/images/common/carbon_neutral.svg" alt=""> <label style="margin-left:10px ;" for="">Your order is 100% Carbon Neutral</label></span><br>
 
@@ -295,9 +360,9 @@ padding: 5px;
     <div id="cart_data">
         <button id="back_cart">BACK TO CART</button>
     </div>
-    <div id="cart_items">
+    <!-- <div id="cart_items">
 
-    </div>
+    </div> -->
  
     <div id="cart_datas">
 
@@ -308,19 +373,32 @@ padding: 5px;
       <hr>
         <div>
            <label for="items">Items</label>
-           <span><span>INR</span><span>550000</span></span>
+           <span><span>INR </span><span id="raw_total"> 550000</span></span>
         </div>
         <div>
            <label for="items">Delivery</label>
-           <span><span>INR</span><span>2200</span></span>
+           <span><span>INR</span><span id="delivery_price"> 1710</span></span>
         </div>
         <div>
            <label for="items">Total</label>
-           <span><span>INR</span><span>3300</span></span>
+           <span><span>INR </span><span id="total_price"> 3300</span></span>
         </div>
     </div>
 </div>
 </div>
+<!----------- Toggle ----------->
+<div id="myNav" class="overlay">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <div class="overlay-content">
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#">Clients</a>
+      <a href="#">Contact</a>
+    </div>
+  </div>
+  
+ 
+  
 </body>
 </html>
 <script src="./append.js"></script>

@@ -5,10 +5,11 @@ input{
 #otp{
     width: 100%;
     margin: auto;
-    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+    /* box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px; */
     background-color: white;
-    padding: 20px 70px 40px 70px;
+    /* padding: 20px 70px 40px 70px; */
     display: none;
+    padding-bottom: 20px;
 
 }
 #top{
