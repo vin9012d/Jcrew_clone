@@ -1,10 +1,12 @@
 var subTotal = 0;
 
+let wishData = JSON.parse(localStorage.getItem("wishData")) || [];
+
 let itemsCount = (data, totalItems) => {
     let count = 0;
 
     data.forEach(el => {
-        count += el.quantity;
+        count += Number(el.quantity);
     });
 
     totalItems.innerText = count > 1 ? `${count} Items` : totalItems.innerText = `${count} Item`;
@@ -55,6 +57,13 @@ let updateQty = (total, amount, qty, price, data, totalItems) => {
     itemsCount(data, totalItems);
 }
 
+let removeWishProduct = (wishData, i) => {
+    wishData.splice(i, 1);
+    localStorage.setItem("wishData", JSON.stringify(wishData));
+    window.location.reload();
+    return false;
+}
+
 let append_sb = (bag, data, totalItems, subTotal_1, subTotal_2) => {
     let div1 = document.createElement("div");
     div1.id = "product_heading";
@@ -93,6 +102,35 @@ let append_sb = (bag, data, totalItems, subTotal_1, subTotal_2) => {
         image.id = "cart_product_img";
         image.src = el.imgUrl;
 
+        let wishIcon = document.createElement("i");
+        wishIcon.id = "wish_icon";
+        wishIcon.setAttribute("class", "fa-regular fa-heart fa-xl");
+
+        wishData.forEach((element) => {
+            if (element.name == el.name) {
+                wishIcon.setAttribute("class", "fa-solid fa-heart fa-xl");
+            }
+        });
+
+        wishIcon.onclick = () => {
+            let flag = true;
+            wishData.forEach((element, index) => {
+                if (element.name == el.name) {
+                    wishIcon.setAttribute("class", "fa-regular fa-heart fa-xl");
+                    flag = removeWishProduct(wishData, index);
+                }
+            });
+
+            if (flag) {
+                wishIcon.setAttribute("class", "fa-solid fa-heart fa-xl");
+                wishData.push(el);
+                localStorage.setItem("wishData", JSON.stringify(wishData));
+            }
+        }
+
+        let div9 = document.createElement("div");
+        div9.append(image, wishIcon);
+
         let name = document.createElement("p");
         name.innerText = el.name;
 
@@ -110,10 +148,9 @@ let append_sb = (bag, data, totalItems, subTotal_1, subTotal_2) => {
 
         let price = document.createElement("p");
         let amount = +el.strikePrice.replace(/,/g, "");
-        let total = amount * data[i].quantity;
+        let total = amount * Number(data[i].quantity);
 
         subTotal += total;
-        // console.log(subTotal);
 
         total = new Intl.NumberFormat().format(total);
         total = total.includes(".") ? total : total + ".00";
@@ -132,16 +169,15 @@ let append_sb = (bag, data, totalItems, subTotal_1, subTotal_2) => {
                 removeCartProduct(data, i);
             }
             else {
-                data[i].quantity--;
+                Number(data[i].quantity--);
 
                 subTotal -= amount;
                 temp = new Intl.NumberFormat().format(subTotal);
                 temp = temp.includes(".") ? temp : temp + ".00";
                 subTotal_1.innerText = "INR " + temp;
                 subTotal_2.innerText = "INR " + temp;
-                // console.log(subTotal);
 
-                updateQty(total, amount, data[i].quantity, price, data, totalItems);
+                updateQty(total, amount, Number(data[i].quantity), price, data, totalItems);
             }
         }
 
@@ -149,16 +185,15 @@ let append_sb = (bag, data, totalItems, subTotal_1, subTotal_2) => {
         inc.id = "inc";
         inc.innerText = "+";
         inc.onclick = () => {
-            data[i].quantity++;
+            Number(data[i].quantity++)++;
 
             subTotal += amount;
             temp = new Intl.NumberFormat().format(subTotal);
             temp = temp.includes(".") ? temp : temp + ".00";
             subTotal_1.innerText = "INR " + temp;
             subTotal_2.innerText = "INR " + temp;
-            // console.log(subTotal);
 
-            updateQty(total, amount, data[i].quantity, price, data, totalItems);
+            updateQty(total, amount, Number(data[i].quantity), price, data, totalItems);
         }
 
         let div8 = document.createElement("div");
@@ -166,7 +201,7 @@ let append_sb = (bag, data, totalItems, subTotal_1, subTotal_2) => {
         div8.onclick = () => {
             div8.innerHTML = "";
             div8.style.margin = "0 0 93px -15px";
-            div8.append(dec, el.quantity, inc)
+            div8.append(dec, Number(el.quantity), inc)
         }
 
         let p4 = document.createElement("p")
@@ -199,7 +234,7 @@ let append_sb = (bag, data, totalItems, subTotal_1, subTotal_2) => {
 
         div4.append(name, size, color, div5);
 
-        div3.append(image, div4);
+        div3.append(div9, div4);
 
         div.append(div3, div6);
 
@@ -225,6 +260,35 @@ let append_sl = (bag, data, totalProducts) => {
         let image = document.createElement("img");
         image.id = "saved_product_img";
         image.src = el.imgUrl;
+
+        let wishIcon = document.createElement("i");
+        wishIcon.id = "wish_icon";
+        wishIcon.setAttribute("class", "fa-regular fa-heart fa-xl");
+
+        wishData.forEach((element) => {
+            if (element.name == el.name) {
+                wishIcon.setAttribute("class", "fa-solid fa-heart fa-xl");
+            }
+        });
+
+        wishIcon.onclick = () => {
+            let flag = true;
+            wishData.forEach((element, index) => {
+                if (element.name == el.name) {
+                    wishIcon.setAttribute("class", "fa-regular fa-heart fa-xl");
+                    flag = removeWishProduct(wishData, index);
+                }
+            });
+
+            if (flag) {
+                wishIcon.setAttribute("class", "fa-solid fa-heart fa-xl");
+                wishData.push(el);
+                localStorage.setItem("wishData", JSON.stringify(wishData));
+            }
+        }
+
+        let div5 = document.createElement("div");
+        div5.append(image, wishIcon);
 
         let name = document.createElement("p");
         name.innerText = el.name;
@@ -266,7 +330,7 @@ let append_sl = (bag, data, totalProducts) => {
 
         div2.append(name, size, color, div3);
 
-        div1.append(image, div2);
+        div1.append(div5, div2);
 
         div.append(div1, div4);
 
