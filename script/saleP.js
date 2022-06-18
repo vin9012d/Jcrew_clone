@@ -1,7 +1,7 @@
 
 let arr = JSON.parse(localStorage.getItem("sale"));
 
-let productBox = document.getElementById("products")
+let productBox = document.getElementById("products_append")
 
 
 displayProduct(arr,productBox);
@@ -63,7 +63,7 @@ function displayProduct(array,box){
         divone.append(heart,img,title,stkPrice,price,off,offPara)//appending item object keys value inside a div called divone
         divone.addEventListener("click",()=>{
             let item = el;
-            console.log("hello")
+            //console.log("hello")
             localStorage.setItem("showMe",JSON.stringify(item));
         })
 
@@ -76,6 +76,7 @@ attireFilter = ()=>{
     //console.log("hello")//check if function is working or not
     let selected = document.getElementById("filter").value;
     if(selected=="usual"){//if this statement went true it will going to display data in their usal order
+        arr = JSON.parse(localStorage.getItem("sale"));
         displayProduct(arr,productBox);
         return;
     }
@@ -89,8 +90,8 @@ sorting = ()=>{
     let selected = document.getElementById("sorting").value;
     if(selected == "LTH"){//This statement will going to sort by Low to High price
         arr.sort((a,b)=>{
-            let x =+a.price;
-            let y =+b.price;
+            let x =+a.strikePrice;
+            let y =+b.strikePrice;
             if(x>y){
                 return 1;
             }
@@ -105,8 +106,8 @@ sorting = ()=>{
     }
     if(selected == "HTL"){//This function will going to sort by High to Low price
         arr.sort((a,b)=>{
-            let x =+a.price;
-            let y =+b.price;
+            let x =+a.strikePrice;
+            let y =+b.strikePrice;
             if(x>y){
                 return -1;
             }
@@ -120,6 +121,7 @@ sorting = ()=>{
         displayProduct(arr,productBox);
     }
     if(selected == "usual"){
+        arr = JSON.parse(localStorage.getItem("sale"));
         displayProduct(arr,productBox);//this will going to bring products in their usual order
     }
 

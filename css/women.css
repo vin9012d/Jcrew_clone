@@ -1,9 +1,8 @@
-h2{
-    text-align: center;
-}
+
 *{
-    /* font-family: soleil,Helvetica,Arial,sans-serif; */
+
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
 }
 
 #intro,#tagline{
@@ -50,24 +49,24 @@ h2{
     width: 80%;
     margin: 20px auto;
 }
-#products{
+#products_append{
     display: grid;
     grid-template-columns: repeat(3,1fr);
     /* gap: 10px; */
 
 }
-#products>div{
+#products_append>div{
     padding: 0px 10px 0px 10px;
     margin-top: 10px;
 }
-#products>div:hover{
+#products_append>div:hover{
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
-#products>div>img{
+#products_append>div>img{
     width: 100%;
     height: 85%;
 }
-#products>div>p{
+#products_append>div>p{
     font-weight: 600;
     font-size: 13px;
 }
@@ -78,23 +77,23 @@ h2{
     color: #da2a2a;
 } */
 
-#products>div>span:nth-child(2){
+#products_append>div>span:nth-child(2){
     font-weight: 600;
     font-size: 14px;
 }
-#products>div>span:nth-child(3){
+#products_append>div>span:nth-child(3){
     font-weight: 600;
     font-size: 14px;
 }
 
-#products>div>span:nth-child(1){
+#products_append>div>span:nth-child(1){
     position: absolute;
     margin-left: 390px;
     margin-top: 10px;
 
     
 }
-#products>div>span:nth-child(1):hover{
+#products_append>div>span:nth-child(1):hover{
     cursor: pointer;
 }
 
