@@ -3,11 +3,7 @@ import {displayProduct,wishlist} from "../scripts/export.js"
 
 let arr = JSON.parse(localStorage.getItem("kids"));
 let productBox = document.getElementById("products_append")
-<<<<<<< HEAD:scripts/kidsP.js
-let array = [];
-=======
 let array = JSON.parse(localStorage.getItem("favItem"))  || [];
->>>>>>> productPage:script/kidsP.js
 
 displayProduct(arr,productBox,array);//this function will going to display product 
 

@@ -2,11 +2,7 @@ import {displayProduct,wishlist} from "../scripts/export.js"
 
 let arr = JSON.parse(localStorage.getItem("Man"));
 let productBox = document.getElementById("products_append")
-<<<<<<< HEAD:scripts/manP.js
-let array = [];
-=======
-let array = JSON.parse(localStorage.getItem("favItem"))  || [];
->>>>>>> productPage:script/manP.js
+let array = JSON.parse(localStorage.getItem("favItem")) || [];
 
 
 displayProduct(arr,productBox,array);

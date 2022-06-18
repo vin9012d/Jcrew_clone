@@ -2,11 +2,7 @@ import {displayProduct,wishlist} from "../scripts/export.js"
 
 var arr = JSON.parse(localStorage.getItem("womenArr"))
 var productBox = document.getElementById("products_append")
-<<<<<<< HEAD:scripts/womenP.js
-let array = [];
-=======
-let array = JSON.parse(localStorage.getItem("favItem"))  || [];
->>>>>>> productPage:script/womenP.js
+let array = JSON.parse(localStorage.getItem("favItem"))  ||[];
 // function create(arg){
 //     return document.createElement(arg);
 // }

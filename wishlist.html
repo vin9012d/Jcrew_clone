@@ -81,22 +81,22 @@
             }*/
             //else{
                 //itag.setAttribute("class","fa-regular fa-heart fa-lg")
-=======
 
-            }
-            else{
-                itag.setAttribute("class","fa-regular fa-heart fa-lg")
->>>>>>> productPage
 
-                wishlist(el,arrayFav,strike)
+            //}
+            //else{
+                //itag.setAttribute("class","fa-regular fa-heart fa-lg")
+
+
+                //wishlist(el,arrayFav,strike)
                 //this will going to delete the element which is meant to be deleted
-                displayProduct(array,box,arrayFav)
+                //displayProduct(array,box,arrayFav)
                 //strike = !strike;
                
                 
-            }
+            //}
             
-        })*/
+        //})*/
         
         let title = create("p");//name of product
         title.innerText = el.name;
@@ -143,7 +143,7 @@ function wishlist(arg,arrayFav,stk){
 <!-- ----------------------------------------------------------Common------------------------------------------------------------------ -->
 
 <script type = "module">
-    import navbar from './components/navbar.js';
+    import {navbar,sidebar} from './components/navbar.js';
     import {footer,foot} from './components/backfooter.js'
     document.getElementById("navbar").innerHTML = navbar();
     document.querySelector(".dropdown").innerHTML = sidebar();
