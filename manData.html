@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Man's Clothing | J.Crew</title>
+    <link rel="icon" href="https://www.jcrew.com/favicon.ico">
+    <link rel="stylesheet" href="./css/women.css">
+
+</head>
+<body>
+    
+    <h3 id="intro">SHOP ALL MAN'S CLOTHING</h3>
+    <p id="tagline">Shop by Size & fit</p>
+    <div id="sizes">
+        <!-- <div> -->
+            <div>XS</div>
+            <div>S</div>
+            <div>M</div>
+            <div>L</div>
+            <div>X</div>
+            <div>XL</div>
+            <div>XXL</div>
+            <div>SLIM</div>
+            <div>TALL</div>
+        <!-- </div> -->
+        
+    </div>
+    <div id="filter-bar">
+        <select name="Filters" id="filter" onchange="attireFilter()">
+            <option value="usual">Category</option>
+            <option value="clothing">Clothing</option>
+            <option value="accessories">Accessories</option>
+            <option value="shoes">Shoes</option>
+            
+        </select>
+        <select name="" id="sorting" onchange="sorting()">
+            <option value="usual">Featured</option>
+            <option value="LTH">Price: Low to High</option>
+            <option value="HTL">Price: High to Low</option>
+        </select>
+    </div>
+    <div id="products_append">
+        <!-- append products here -->
+    </div>
+    
+</body>
+</html>
+
+<script src="./script/manArr.js"></script>
+<script src="./script/manP.js" type="module"></script>
+<script src="https://kit.fontawesome.com/448b55d940.js" crossorigin="anonymous"></script>

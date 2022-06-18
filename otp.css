@@ -1,0 +1,70 @@
+input{
+    box-sizing: border-box;
+  
+}
+#otp{
+    width: 100%;
+    margin: auto;
+    /* box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px; */
+    background-color: white;
+    /* padding: 20px 70px 40px 70px; */
+    display: none;
+    padding-bottom: 20px;
+
+}
+#top{
+    display: flex;
+    justify-content: space-between;
+
+ 
+}
+
+#otp_txt{
+    width: 100%;
+    background-color: blue;
+    color: white;
+    padding: 10px;
+    border: none; 
+}
+#notification{
+    margin-top: 5px;
+    color: green;
+}
+#enter_otp{
+    width: 100%;
+    padding: 10px;
+}
+#resend{
+    text-align: end;
+    color: blue;
+    margin-top: 5px;
+    cursor: pointer;
+}
+#cancel{
+padding: 10px;
+    background-color: white;
+    color: blue;
+    border: blue 1px solid;
+}
+#submit{
+    padding: 10px;
+    background-color: blue;
+    color: white;
+    border: none;
+}
+#cancel_submit{
+    display: flex;
+    justify-content: space-between;
+}
+#cancel_submit>button:first-child{
+width: 30%;
+}
+#cancel_submit>button:last-child{
+width: 60%;
+}
+#timer_div{
+margin-top: 20px;
+}
+#timer_min,#timer_seconds{
+color: red;
+}
