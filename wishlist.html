@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAVORITE | J.Crew</title>
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.1.1/css/all.css">
+    <link rel="stylesheet" href="/css/women.css">
+    <link rel="icon" href="https://www.jcrew.com/favicon.ico">
+    <link rel="stylesheet" href="./styles/women.css">
+    <link rel="stylesheet" href="./styles/index.css">
+
+</head>
+<body>
+
+     <!-- --------------------------------------------------Navbar Small Screen------------------------------------------------ -->
+    <div class="dropdown"></div>
+
+    <!-- --------------------------------------------------Navbar---------------------------------------------------------->
+    <div id = "navbar">
+    </div>
+    <h4 id = "have_question">Have a question? We can help.</h4>
+    <hr>
+
+    <!-- ----------------------------------------------------------------------------------------------------------------- -->
+
+
+    <h3 id="intro">YOUR WISHLIST</h3>
+    <div id="products_append">
+        <!-- append products here -->
+    </div>
+
+
+    <!-- ----------------------------------------------------Footer Part--------------------------------------------------- --> 
+
+    <hr>
+    <div id = "foot"></div>
+    <div id = "back_footer"></div>
+
+    <!-- -------------------------------------------------------------------------------------------------------------------- --> 
+</body>
+</html>
+
+<script>
+    let productBox = document.getElementById("products_append")
+
+    let array = JSON.parse(localStorage.getItem("favItem"));
+
+    displayProduct(array,productBox,array);
+
+    function displayProduct(array,box,arrayFav){
+    
+    box.innerHTML = null;
+    
+
+    function create(arg){
+        return document.createElement(arg);
+    }
+    array.forEach((el) => {
+        let divone = create("div");
+
+        let heart = create("span");
+        
+        let itag = create("i");// i tag to get favorite icon
+        itag.setAttribute("class","fa-solid fa-heart fa-lg")//this was changed as compared to export js
+        let strike = false;
+        
+
+        heart.append(itag);
+        heart.addEventListener("click",()=>{
+            /*if(strike){
+                itag.setAttribute("class","fa-solid fa-heart fa-lg");
+                wishlist(el,arrayFav,strike)
+                //this will going to add element to the wishlist
+                displayProduct(array,box,arrayFav)
+                strike = !strike;
+                
+            }*/
+            //else{
+                //itag.setAttribute("class","fa-regular fa-heart fa-lg")
+
+                wishlist(el,arrayFav,strike)
+                //this will going to delete the element which is meant to be deleted
+                displayProduct(array,box,arrayFav)
+                //strike = !strike;
+               
+                
+            //}
+            
+        })
+        
+        let title = create("p");//name of product
+        title.innerText = el.name;
+        let img = create("img")//image of product
+        img.src = el.imgUrl;
+        let price= create("span");//price of product
+        price.innerText = " INR "+el.price;
+        price.style.color = "#da2a2a"
+        let stkPrice = create("span")
+        stkPrice.innerText = "INR "+el.strikePrice;//strike price of product
+        stkPrice.style.textDecoration = "line-through";
+        
+
+        divone.append(heart,img,title,stkPrice,price)//appending item object keys value inside a div called divone
+
+        box.append(divone);//appending divone to the div product div of html
+
+    });
+}
+
+
+function wishlist(arg,arrayFav,stk){
+    if(stk == true){
+        arrayFav.push(arg);
+        localStorage.setItem("favItem",JSON.stringify(arrayFav));
+    }
+    else{
+        let favArr = JSON.parse(localStorage.getItem("favItem"));;
+                let spl;
+                for(let i=0;i<favArr.length;i++){
+                    if(favArr[i].name == arg.name){
+                        spl = i;
+                    }
+                }
+            arrayFav.splice(spl,1);
+            
+            localStorage.setItem("favItem",JSON.stringify(arrayFav));;
+    }
+    
+}
+</script>
+<script src="https://kit.fontawesome.com/448b55d940.js" crossorigin="anonymous"></script>
+<script src = "scripts/sidebar.js"></script>
+<!-- ----------------------------------------------------------Common------------------------------------------------------------------ -->
+
+<script type = "module">
+    import navbar from './components/navbar.js';
+    import {footer,foot} from './components/backfooter.js'
+    document.getElementById("navbar").innerHTML = navbar();
+    document.querySelector(".dropdown").innerHTML = sidebar();
+    document.getElementById("back_footer").innerHTML = footer();
+    document.getElementById("foot").innerHTML = foot();
+
+    document.getElementById("logo").addEventListener("click",function(){
+        window.location.href = "index.html"
+    })
+    let query = document.getElementById("LoginSignUp")
+
+    let obj = JSON.parse(localStorage.getItem("signupData"))
+    console.log(obj)
+    document.getElementById("LoginSignUp").innerText = obj[0].name
+
+    let kart = JSON.parse(localStorage.getItem("cartData"))
+    let wish = JSON.parse(localStorage.getItem("favItem"))
+    document.getElementById("wishlist_count").innerText = wish.length;
+    document.getElementById("cartlist_count").innerText = kart.length;
+    
+    
+</script>
+
+<!-- ----------------------------------------------------------Common------------------------------------------------------------------ -->

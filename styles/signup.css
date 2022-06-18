@@ -1,0 +1,158 @@
+* {
+    box-sizing: border-box;
+    margin:0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+img {
+    max-width: 100%;
+}
+
+#signup-outer {
+    width:100%;
+    display: none;
+    background-color: rgba(0, 0, 0, 0.665);
+    position: fixed;
+    height: 100vh;
+    top:0;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+#signup-form,#forgetPass, #createAcc {
+    width:25%;
+    padding:50px 20px;
+    height:90vh;
+    background-color: #fff;
+    position:fixed;
+    position:relative;
+}
+
+#signup-form input, #forgetPass input, #createAcc > input {
+    width:100%;
+    height: 50px;
+    padding:0 15px;
+    margin-bottom:10px;
+}
+
+#password-sec {
+    width:100%;
+    display: flex;
+}
+
+#password-sec>input{
+    width:85%;
+}
+
+#password-sec > div {
+    width:15%;
+    height:50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border:1px solid black;
+    border-left: 0px;
+}
+
+#password-sec > i {
+    font-size: 20px;
+}
+
+#newpass {
+    display: flex;
+    justify-content: space-between;
+    padding:10px 0;
+}
+
+#newpass > div > #remember-checkbox {
+    width:15px;
+    height:15px;
+}
+
+#newpass > button {
+    color:blue;
+    background: transparent;
+    border:0;
+}
+
+#SignIn, #forgetPass button , #createAcc > button {
+    width: 100%;
+    background-color: black;
+    padding:16px 0;
+    color:#fff;
+    margin-bottom: 10px;
+}
+
+#policy {
+    display: inline-block;
+    padding-bottom: 40px;
+    font-size: 13px;
+    color:gray;
+}
+
+#signup-option {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+}
+
+#signup-option > button {
+    background-color: transparent;
+    border:0;
+    color:blue;
+}
+
+.fa-xmark , .fa-angle-left {
+    position: absolute;
+    top:10px;
+    right:10px;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+button {
+    cursor: pointer;
+}
+
+#forgetPass,#createAcc {
+    text-align: center;
+}
+
+#forgetPass h3, #createAcc > h3 {
+    padding-bottom: 20px;
+}
+
+#forgetPass button, #createAcc button {
+    margin-top:20px;
+}
+
+.fa-angle-left {
+    right:90%;
+}
+
+.fa-eye , .fa-eye-slash {
+    cursor: pointer;
+}
+
+@media all and (min-width:450px) and (max-width:850px) {
+    #signup-form,#forgetPass, #createAcc {
+        width:60%;
+        padding:50px 20px;
+        height:90vh;
+        background-color: #fff;
+        position:fixed;
+        position:relative;
+    }
+}
+
+@media all and (min-width:200px) and (max-width:449px){
+    #signup-form,#forgetPass, #createAcc {
+        width:80%;
+        padding:50px 20px;
+        height:70vh;
+        background-color: #fff;
+        position:fixed;
+        position:relative;
+    }
+}
