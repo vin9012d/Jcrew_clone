@@ -148,8 +148,10 @@
   });
   let query = document.getElementById("LoginSignUp");
 
-  let userName = localStorage.getItem("username") || SignIn;
-  document.querySelector("#LoginSignUp").innerText = userName;
+  let userName = localStorage.getItem("username");
+  if (userName) {
+    document.querySelector("#LoginSignUp").innerText = userName;
+  }
 
   let kart = JSON.parse(localStorage.getItem("cartData"));
   let wish = JSON.parse(localStorage.getItem("favItem"));

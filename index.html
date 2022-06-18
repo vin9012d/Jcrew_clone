@@ -254,6 +254,8 @@
   document.getElementById("wishlist_count").innerText = wish.length;
   document.getElementById("cartlist_count").innerText = kart.length;
 
-  let userName = localStorage.getItem("username") || SignIn;
-  document.querySelector("#LoginSignUp").innerText = userName;
+  let userName = localStorage.getItem("username");
+  if (userName) {
+    document.querySelector("#LoginSignUp").innerText = userName;
+  }
 </script>

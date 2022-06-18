@@ -176,8 +176,10 @@
   document.getElementById("back_footer").innerHTML = footer();
   document.getElementById("foot").innerHTML = foot();
 
-  let userName = localStorage.getItem("username") || SignIn;
-  document.querySelector("#LoginSignUp").innerText = userName;
+  let userName = localStorage.getItem("username");
+  if (userName) {
+    document.querySelector("#LoginSignUp").innerText = userName;
+  }
 
   document.getElementById("logo").addEventListener("click", function () {
     window.location.href = "index.html";

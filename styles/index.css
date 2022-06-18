@@ -324,23 +324,30 @@ body{
     margin: auto;
     display: flex;
     padding: 15px 0px 15px 0px;
-    border: 0.5px solid grey;
     cursor: pointer;
     font-weight: bold;
     justify-content: center;
     align-items: center;
-   
+    background-color: black;
+    color: white;
 }
 
 #products>div>div>a{
     margin: auto;
     text-decoration: none;
+    color:#fff;
 }
+
 #products>div>div:hover{
-    background-color: grey;
-    color: white;
+    background-color: rgb(191, 3, 3);
+    transition: 0.5s all;
     border: 0px;
 }
+
+#products>div>div:hover a {
+    color:#fff;
+}
+
 /* --------------------------------------------------------------------------------------------------------------- */
 #adv{
     background-color: rgb(233, 179, 80);
