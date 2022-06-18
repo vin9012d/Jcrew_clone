@@ -1,11 +1,11 @@
-let data=[
-    {imgUrl:"https://www.jcrew.com/s7-img-facade/BI574_PT1317_m?wid=416",price:100,quantity:1, size:"M",color:"Navy Blue", name:"product dredd" },
-    {imgUrl:"https://www.jcrew.com/s7-img-facade/BI574_PT1317_m?wid=416",price:150,quantity:2, size:"M",color:"Army green",name:"product crecc"}
-]
+// let data=[
+//     {imgUrl:"https://www.jcrew.com/s7-img-facade/BI574_PT1317_m?wid=416",price:100,quantity:1, size:"M",color:"Navy Blue", name:"product dredd" },
+//     {imgUrl:"https://www.jcrew.com/s7-img-facade/BI574_PT1317_m?wid=416",price:150,quantity:2, size:"M",color:"Army green",name:"product crecc"}
+// ]
 
 let data1 = JSON.parse(localStorage.getItem("cartData"));
 var sum;
-displayData(data)
+displayData(data1)
 
 function displayData(data) {
     sum = 0;
