@@ -1,11 +1,11 @@
-// let data=[
-//     {imgUrl:"https://www.jcrew.com/s7-img-facade/BI574_PT1317_m?wid=416",price:100,quantity:1, size:"M",color:"Navy Blue", name:"product dredd" },
-//     {imgUrl:"https://www.jcrew.com/s7-img-facade/BI574_PT1317_m?wid=416",price:150,quantity:2, size:"M",color:"Army green",name:"product crecc"}
-// ]
+let data=[
+    {imgUrl:"https://www.jcrew.com/s7-img-facade/BI574_PT1317_m?wid=416",price:100,quantity:1, size:"M",color:"Navy Blue", name:"product dredd" },
+    {imgUrl:"https://www.jcrew.com/s7-img-facade/BI574_PT1317_m?wid=416",price:150,quantity:2, size:"M",color:"Army green",name:"product crecc"}
+]
 
 let data1 = JSON.parse(localStorage.getItem("cartData"));
 var sum;
-displayData(data1)
+displayData(data)
 
 function displayData(data) {
     sum = 0;
@@ -125,19 +125,21 @@ function openNav(ele) {
     let image = document.createElement("img");
     image.src = ele.imgUrl;
     let name = document.createElement("p");
-    name.innerText = ele.name;
-    name.style.color = "white"
+    name.innerText = ele.description;
+    name.style.color = "black"
 
 
 
     container.append(image, name)
     // document.getElementById("myNav").style="block";
     document.getElementById("myNav").style.width = "70%";
-
-
 }
 
 function closeNav() {
     document.getElementById("myNav").style.width = "0%";
     // document.getElementById("myNav").style="none";
+}
+
+function backToCart() {
+    window.location.href="cart.html"
 }

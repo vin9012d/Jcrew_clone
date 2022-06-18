@@ -290,7 +290,8 @@ padding: 5px;
   left: 200px;
   bottom: 100px;
  
-  background-color: rgba(0,0,0, 0.9);
+  background-color: white;
+  opacity: 0.9;
 
   overflow-x: hidden;
   transition: 0.5s;
@@ -298,7 +299,8 @@ padding: 5px;
 
 .overlay-content {
   position: relative;
-  top: 25%;
+  top: 10%;
+  left: 10%;
   width: 80%;
   text-align: center;
   margin-top: 30px;
@@ -420,7 +422,7 @@ padding: 5px;
     </div>
     <div id="right">
         <div id="cart_data">
-            <button id="back_cart">BACK TO CART</button>
+            <button id="back_cart" onclick="backToCart()"> BACK TO CART</button>
         </div>
         <div id="cart_items">
         
