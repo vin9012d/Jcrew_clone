@@ -1,7 +1,8 @@
 var subTotal = 0;
 
-let wishData = JSON.parse(localStorage.getItem("wishData")) || [];
+let wishData = JSON.parse(localStorage.getItem("favItem")) || [];
 
+// Displaying total items quantity in cart
 let itemsCount = (data, totalItems) => {
     let count = 0;
 
@@ -12,18 +13,21 @@ let itemsCount = (data, totalItems) => {
     totalItems.innerText = count > 1 ? `${count} Items` : totalItems.innerText = `${count} Item`;
 }
 
+// Removing product from cart
 let removeCartProduct = (data, i) => {
     data.splice(i, 1);
     localStorage.setItem("cartData", JSON.stringify(data));
     window.location.reload();
 }
 
+// Removing saved product from cart
 let removeSavedProduct = (data, i) => {
     data.splice(i, 1);
     localStorage.setItem("savedProduct", JSON.stringify(data));
     window.location.reload();
 }
 
+// Saving Item for later use
 let saveProduct = (data, i) => {
     let arr = JSON.parse(localStorage.getItem("savedProduct")) || [];
     arr.push(data[i]);
@@ -35,6 +39,7 @@ let saveProduct = (data, i) => {
     window.location.reload();
 }
 
+// Adding product to bag
 let addToBag = (data, i) => {
     let arr = JSON.parse(localStorage.getItem("cartData")) || [];
     arr.push(data[i]);
@@ -46,6 +51,7 @@ let addToBag = (data, i) => {
     window.location.reload();
 }
 
+// Updating Product quantity
 let updateQty = (total, amount, qty, price, data, totalItems) => {
     total = amount * qty;
     total = new Intl.NumberFormat().format(total);
@@ -57,13 +63,15 @@ let updateQty = (total, amount, qty, price, data, totalItems) => {
     itemsCount(data, totalItems);
 }
 
+// Removing product from wishlist
 let removeWishProduct = (wishData, i) => {
     wishData.splice(i, 1);
-    localStorage.setItem("wishData", JSON.stringify(wishData));
+    localStorage.setItem("favItem", JSON.stringify(wishData));
     window.location.reload();
     return false;
 }
 
+// Appending product to the shopping bag
 let append_sb = (bag, data, totalItems, subTotal_1, subTotal_2) => {
     let div1 = document.createElement("div");
     div1.id = "product_heading";
@@ -107,15 +115,16 @@ let append_sb = (bag, data, totalItems, subTotal_1, subTotal_2) => {
         wishIcon.setAttribute("class", "fa-regular fa-heart fa-xl");
 
         wishData.forEach((element) => {
-            if (element.name == el.name) {
+            if (element.name == el.name && element.color == el.color && element.size == el.size) {
                 wishIcon.setAttribute("class", "fa-solid fa-heart fa-xl");
             }
         });
 
+        // Adding or removing wishlist products
         wishIcon.onclick = () => {
             let flag = true;
             wishData.forEach((element, index) => {
-                if (element.name == el.name) {
+                if (element.name == el.name && element.color == el.color && element.size == el.size) {
                     wishIcon.setAttribute("class", "fa-regular fa-heart fa-xl");
                     flag = removeWishProduct(wishData, index);
                 }
@@ -124,7 +133,7 @@ let append_sb = (bag, data, totalItems, subTotal_1, subTotal_2) => {
             if (flag) {
                 wishIcon.setAttribute("class", "fa-solid fa-heart fa-xl");
                 wishData.push(el);
-                localStorage.setItem("wishData", JSON.stringify(wishData));
+                localStorage.setItem("favItem", JSON.stringify(wishData));
             }
         }
 
@@ -161,6 +170,7 @@ let append_sb = (bag, data, totalItems, subTotal_1, subTotal_2) => {
         subTotal_1.innerText = "INR " + temp;
         subTotal_2.innerText = "INR " + temp;
 
+        // Decrementing quantity of the product
         let dec = document.createElement("p");
         dec.id = "dec";
         dec.innerText = "_";
@@ -181,6 +191,7 @@ let append_sb = (bag, data, totalItems, subTotal_1, subTotal_2) => {
             }
         }
 
+        // Incrementing quantity of the product
         let inc = document.createElement("p");
         inc.id = "inc";
         inc.innerText = "+";
@@ -198,6 +209,8 @@ let append_sb = (bag, data, totalItems, subTotal_1, subTotal_2) => {
 
         let div8 = document.createElement("div");
         div8.id = "counter";
+
+        // Getting increment and decrement options
         div8.onclick = () => {
             div8.innerHTML = "";
             div8.style.margin = "0 0 93px -15px";
@@ -207,6 +220,8 @@ let append_sb = (bag, data, totalItems, subTotal_1, subTotal_2) => {
         let p4 = document.createElement("p")
         p4.innerText = "Remove";
         p4.style.cursor = "pointer";
+
+        // Removing Product
         p4.addEventListener("click", function () {
             removeCartProduct(data, i);
         });
@@ -214,6 +229,8 @@ let append_sb = (bag, data, totalItems, subTotal_1, subTotal_2) => {
         let p5 = document.createElement("p")
         p5.innerText = "Save for Later";
         p5.style.cursor = "pointer";
+
+        // Saving Product
         p5.addEventListener("click", function () {
             saveProduct(data, i);
         });
@@ -244,6 +261,7 @@ let append_sb = (bag, data, totalItems, subTotal_1, subTotal_2) => {
     });
 };
 
+// Appending product to saved for later bag
 let append_sl = (bag, data, totalProducts) => {
     data.forEach((el, i) => {
         let div = document.createElement("div");
@@ -266,15 +284,16 @@ let append_sl = (bag, data, totalProducts) => {
         wishIcon.setAttribute("class", "fa-regular fa-heart fa-xl");
 
         wishData.forEach((element) => {
-            if (element.name == el.name) {
+            if (element.name == el.name && element.color == el.color && element.size == el.size) {
                 wishIcon.setAttribute("class", "fa-solid fa-heart fa-xl");
             }
         });
 
+        // Adding or removing wishlist products
         wishIcon.onclick = () => {
             let flag = true;
             wishData.forEach((element, index) => {
-                if (element.name == el.name) {
+                if (element.name == el.name && element.color == el.color && element.size == el.size) {
                     wishIcon.setAttribute("class", "fa-regular fa-heart fa-xl");
                     flag = removeWishProduct(wishData, index);
                 }
@@ -283,7 +302,7 @@ let append_sl = (bag, data, totalProducts) => {
             if (flag) {
                 wishIcon.setAttribute("class", "fa-solid fa-heart fa-xl");
                 wishData.push(el);
-                localStorage.setItem("wishData", JSON.stringify(wishData));
+                localStorage.setItem("favItem", JSON.stringify(wishData));
             }
         }
 
@@ -311,6 +330,8 @@ let append_sl = (bag, data, totalProducts) => {
         let p1 = document.createElement("p")
         p1.innerText = "Remove";
         p1.style.cursor = "pointer";
+
+        // Removing Product
         p1.addEventListener("click", function () {
             removeSavedProduct(data, i);
         });
@@ -320,6 +341,8 @@ let append_sl = (bag, data, totalProducts) => {
         p2.style.cursor = "pointer";
         p2.style.padding = "7px";
         p2.style.margin = "-2px 0 0 8px";
+
+        // Adding product to bag
         p2.addEventListener("click", function () {
             addToBag(data, i);
         });
@@ -336,6 +359,7 @@ let append_sl = (bag, data, totalProducts) => {
 
         bag.append(div);
 
+        // Displaying number of products in bag
         if (data.length > 1) {
             totalProducts.innerText = `${data.length} of ${data.length} Items`;
         }
