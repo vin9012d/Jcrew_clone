@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="../favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="../favicon_io/site.webmanifest">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.1.1/css/all.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;1,400&family=Poppins:ital,wght@0,100;0,400;1,200&family=Roboto:wght@500&family=Smooch&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles/cart.css">
+    <link rel="stylesheet" href="styles/index.css">
+    <title>Shopping Bag | J.Crew</title>
+</head>
+
+<body>
+
+    <!-- --------------------------------------------------Navbar Small Screen------------------------------------------------ -->
+    <div class="dropdown"></div>
+
+    <!-- ------------------------------------------------------------------------------------------------------------ -->
+    <div id="navbar">
+    </div>
+    <h4 id="have_question">Have a question? We can help.</h4>
+    <hr>
+    <!-- ------------------------------------------------------------------------------------------------------------ -->
+
+
+
+    <div id="cart">
+        <div id="cart_products">
+            <div id="shopping_bag_details">
+                <div id="sb_head">
+                    <div>
+                        <h4>SHOPPING BAG</h4>
+                        <p id="sb_items">0 Item</p>
+                    </div>
+                    <div id="promo_code">
+                        <p></p>
+                    </div>
+                </div>
+                <hr>
+                <div id="empty_sb">
+                    <p>Your Shopping Bag is empty.</p>
+                </div>
+            </div>
+            <div id="saved_later_details">
+                <div id="sl_head">
+                    <h4>SAVED FOR LATER</h4>
+                    <p id="sl_items">0 Items</p>
+                </div>
+                <hr>
+                <div id="empty_sl">
+                    <p>Your Saved for Later is empty.</p>
+                </div>
+            </div>
+        </div>
+        <div id="checkout_section">
+            <div id="subTotal_div1">
+                <p>Item Subtotal</p>
+                <p id="subTotal_1"></p>
+            </div>
+            <div id="subTotal_div2">
+                <h4>Estimated Total</h4>
+                <h4 id="subTotal_2"></h4>
+            </div>
+            <p>Shipping calculated in Checkout</p>
+            <a href="#" id="checkout_btn">CHECK OUT NOW</a>
+            <p>By clicking ‘Check Out Now’, you will be redirected to the eShopWorld checkout page where payment will be
+                taken and your order fulfilled by eShopWorld, J.Crew's preferred partner for international sales.
+            </p>
+            <hr>
+            <p>Add a promo</p>
+            <div id="promo_div">
+                <div id="promo">
+                    <p id="promo_head">Promo</p>
+                </div>
+                <input type="submit" id="applyPromo" value="APPLY">
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ----------------------------------------------------Footer Part--------------------------------------------------- -->
+
+    <hr>
+    <div id="foot"></div>
+
+    <div id="back_footer"></div>
+
+    <!-- -------------------------------------------------------------------------------------------------------------------- -->
+
+
+
+</body>
+<script src="scripts/sidebar.js"></script>
+<script src="https://kit.fontawesome.com/113d3f1a8c.js" crossorigin="anonymous"></script>
+<script type="module">
+    import { navbar, sidebar } from './components/navbar.js';
+    import { footer, foot } from './components/backfooter.js'
+    document.getElementById("navbar").innerHTML = navbar();
+    document.querySelector(".dropdown").innerHTML = sidebar();
+    document.getElementById("back_footer").innerHTML = footer();
+    document.getElementById("foot").innerHTML = foot();
+
+    document.getElementById("logo").addEventListener("click", function () {
+        window.location.href = "index.html"
+    })
+    let query = document.getElementById("LoginSignUp")
+
+    let obj = JSON.parse(localStorage.getItem("signupData"))
+    document.getElementById("LoginSignUp").innerText = obj[0].name
+
+
+    let kart = JSON.parse(localStorage.getItem("cartData"))
+    let wish = JSON.parse(localStorage.getItem("favItem"))
+    document.getElementById("wishlist_count").innerText = wish.length;
+    document.getElementById("cartlist_count").innerText = kart.length;
+
+
+</script>
+
+<script type="module">
+    import { append_sb, append_sl } from "./scripts/cart.js";
+
+    let cart_data = JSON.parse(localStorage.getItem("cartData")) || [];
+
+    console.log(cart_data)
+    let checkout_section = document.getElementById("checkout_section");
+    let subTotal_1 = document.getElementById("subTotal_1");
+    let subTotal_2 = document.getElementById("subTotal_2");
+
+    if (cart_data.length > 0) {
+        let sb_items = document.getElementById("sb_items");
+        let shopping_bag = document.getElementById("empty_sb");
+        let promo_code = document.getElementById("promo_code");
+        promo_code.innerHTML = `Use Promo Code : "Get20"`;
+        shopping_bag.style.padding = "0 0 10px 0";
+        shopping_bag.innerHTML = "";
+        append_sb(shopping_bag, cart_data, sb_items, subTotal_1, subTotal_2);
+
+        checkout_section.style.margin = "20px";
+        checkout_section.style.backgroundColor = "white";
+        // checkout_section.innerHTML = checkout();
+
+        let flag = true;
+        let promo = document.getElementById("promo");
+        document.getElementById("promo").onclick = () => {
+            if (flag == true) {
+                promo.innerHTML = "";
+                let promo_head = document.createElement("p");
+                promo_head.innerText = "Promo";
+                promo_head.style.fontSize = "12px";
+
+                let input = document.createElement("input");
+                input.id = "inputPromo";
+                promo.append(promo_head, input);
+                promo.style.padding = "2px 10px";
+                promo.style.borderColor = "black";
+                flag = false;
+            }
+
+            document.getElementById("inputPromo").focus();
+
+            let amount = subTotal_1.innerText.slice(4);
+
+            let apply = () => {
+                let code = promoCode.value;
+                if (code.length > 0) {
+                    applyPromo.style.cursor = "pointer";
+                    applyPromo.style.backgroundColor = "black";
+                    applyPromo.style.color = "white";
+                }
+                else {
+                    applyPromo.style.cursor = "not-allowed";
+                    applyPromo.style.backgroundColor = "#ddd";
+                    applyPromo.style.color = "#aaa";
+                }
+            }
+
+            let promoCode = document.getElementById("inputPromo");
+            let applyPromo = document.getElementById("applyPromo");
+            promoCode.addEventListener("input", apply);
+
+            applyPromo.addEventListener("click", function () {
+                if (promoCode.value == "Get20" || "get20") {
+                    let temp = amount.replace(/,/g, "");
+                    temp = (Math.round(temp * 0.8 + "e+2") + "e-2")
+                    temp = new Intl.NumberFormat().format(temp);
+                    temp = temp.includes(".") ? temp : temp + ".00";
+
+                    subTotal_1.innerText = "INR " + temp;
+                    subTotal_2.innerText = "INR " + temp;
+                }
+            })
+        };
+
+        document.addEventListener("mouseup", function (e) {
+            flag = true;
+            let promo_head = document.createElement("p");
+            promo_head.innerText = "Promo";
+            if (!promo.contains(e.target)) {
+                promo.innerHTML = "";
+                promo.style.padding = "10px";
+                promo.append(promo_head);
+            }
+        });
+    }
+    else {
+        checkout_section.innerHTML = "";
+    }
+
+    let saved_data = JSON.parse(localStorage.getItem("savedProduct")) || [];
+
+    if (saved_data.length > 0) {
+        let sl_items = document.getElementById("sl_items");
+        let saved_bag = document.getElementById("empty_sl");
+
+        saved_bag.style.padding = "0 0 10px 0";
+        saved_bag.innerHTML = "";
+        append_sl(saved_bag, saved_data, sl_items);
+    }
+</script>
+
+</html>
