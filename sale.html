@@ -1,88 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SALE | JCrew</title>
-    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.1.1/css/all.css">
-    <link rel="icon" href="https://www.jcrew.com/favicon.ico">
-    <link rel="stylesheet" href="./styles/women.css">
-    <link rel="stylesheet" href="./styles/index.css">
-
-</head>
-<body>
- <!-- --------------------------------------------------Navbar Small Screen------------------------------------------------ -->
- <div class="dropdown"></div>
+    <link
+      rel="stylesheet"
+      href="https://site-assets.fontawesome.com/releases/v6.1.1/css/all.css"
+    />
+    <link rel="icon" href="https://www.jcrew.com/favicon.ico" />
+    <link rel="stylesheet" href="./styles/women.css" />
+    <link rel="stylesheet" href="./styles/index.css" />
+  </head>
+  <body>
+    <!-- --------------------------------------------------Navbar Small Screen------------------------------------------------ -->
+    <div class="dropdown"></div>
     <!-- --------------------------------------------------Navbar---------------------------------------------------------->
-    <div id = "navbar">
-    </div>
-    <h4 id = "have_question">Have a question? We can help.</h4>
-    <hr>
+    <div id="navbar"></div>
+    <h4 id="have_question">Have a question? We can help.</h4>
+    <hr />
 
     <!-- --------------------------------------------------Navbar---------------------------------------------------------- -->
 
-
-   
     <h3 id="intro">SALE</h3>
     <div id="filter-bar">
-        <select name="Filters" id="filter" onchange="attireFilter()">
-            <option value="usual">Category</option>
-            <option value="top">Top</option>
-            <option value="shirt">Shirt</option>
-            <option value="shoes">Shoes</option>
-            <option value="belt">Accesories</option>
-            <!-- this select tag will help to filter products -->
-        </select>
-        <select name="" id="sorting" onchange="sorting()">
-            <option value="usual">Featured</option>
-            <option value="LTH">Price: Low to High</option>
-            <option value="HTL">Price: High to Low</option>
-            <!-- this select tag will help to sort product -->
-        </select>
+      <select name="Filters" id="filter" onchange="attireFilter()">
+        <option value="usual">Category</option>
+        <option value="top">Top</option>
+        <option value="shirt">Shirt</option>
+        <option value="shoes">Shoes</option>
+        <option value="belt">Accesories</option>
+        <!-- this select tag will help to filter products -->
+      </select>
+      <select name="" id="sorting" onchange="sorting()">
+        <option value="usual">Featured</option>
+        <option value="LTH">Price: Low to High</option>
+        <option value="HTL">Price: High to Low</option>
+        <!-- this select tag will help to sort product -->
+      </select>
     </div>
 
     <div id="products_append">
-        <!-- append products here -->
+      <!-- append products here -->
     </div>
 
-    
-    <!-- ----------------------------------------------------Footer Part--------------------------------------------------- --> 
+    <!-- ----------------------------------------------------Footer Part--------------------------------------------------- -->
 
-        <hr>
-        <div id = "foot"></div>
+    <hr />
+    <div id="foot"></div>
 
-        <div id = "back_footer"></div>
+    <div id="back_footer"></div>
 
-    <!-- -------------------------------------------------------------------------------------------------------------------- --> 
-</body>
+    <!-- -------------------------------------------------------------------------------------------------------------------- -->
+  </body>
 </html>
-<script src = "scripts/sidebar.js"></script>
-<script src="./scripts/saleP.js" ></script>
-<script src="https://kit.fontawesome.com/448b55d940.js" crossorigin="anonymous"></script>
+<script src="scripts/sidebar.js"></script>
+<script src="./scripts/saleP.js"></script>
+<script
+  src="https://kit.fontawesome.com/448b55d940.js"
+  crossorigin="anonymous"
+></script>
 
-<script type = "module">
-    import {navbar,sidebar} from './components/navbar.js';
-    import {footer,foot} from './components/backfooter.js'
-    document.getElementById("navbar").innerHTML = navbar();
-    document.querySelector(".dropdown").innerHTML = sidebar();
-    document.getElementById("back_footer").innerHTML = footer();
-    document.getElementById("foot").innerHTML = foot();
+<script type="module">
+  import { navbar, sidebar } from "./components/navbar.js";
+  import { footer, foot } from "./components/backfooter.js";
+  document.getElementById("navbar").innerHTML = navbar();
+  document.querySelector(".dropdown").innerHTML = sidebar();
+  document.getElementById("back_footer").innerHTML = footer();
+  document.getElementById("foot").innerHTML = foot();
 
+  document.getElementById("logo").addEventListener("click", function () {
+    window.location.href = "index.html";
+  });
+  let query = document.getElementById("LoginSignUp");
 
+  let userName = localStorage.getItem("username") || SignIn;
+  document.querySelector("#LoginSignUp").innerText = userName;
 
-    document.getElementById("logo").addEventListener("click",function(){
-        window.location.href = "index.html"
-    })
-    let query = document.getElementById("LoginSignUp")
-
-    let obj = JSON.parse(localStorage.getItem("signupData"))
-    document.getElementById("LoginSignUp").innerText = obj[0].name
-
-    let kart = JSON.parse(localStorage.getItem("cartData"))
-    let wish = JSON.parse(localStorage.getItem("favItem"))
-    document.getElementById("wishlist_count").innerText = wish.length;
-    document.getElementById("cartlist_count").innerText = kart.length;
-    
-    
+  let kart = JSON.parse(localStorage.getItem("cartData"));
+  let wish = JSON.parse(localStorage.getItem("favItem"));
+  document.getElementById("wishlist_count").innerText = wish.length;
+  document.getElementById("cartlist_count").innerText = kart.length;
 </script>
