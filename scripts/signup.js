@@ -83,6 +83,7 @@ let newUser = () => {
     createAcc.setAttribute("id","createNewUser");
     createAcc.addEventListener("click",function(){
         newAccount(fillName,fillPassword,fillEmail);
+        
     });
     let backIcon = document.createElement("i");
     backIcon.setAttribute("class","fa-solid fa-angle-left");
@@ -136,6 +137,10 @@ let newAccount = (fillName,fillPassword,fillEmail) => {
             password : fillPassword.value
         }
         signupData.push(singleUser);
+        alert("SignUp Successful!"); //// changed
+        fillName.value = "";///
+        fillEmail.value = "";///
+        fillPassword.value = "";//
         localStorage.setItem("signupData",JSON.stringify(signupData));
         } else {
         alert("Password must be atleast of 8 characters");
