@@ -165,10 +165,23 @@ let login = () => {
             }
         }
         if(haveAcc === true){
-            let name = JSON.parse(localStorage.getItem("signupData"));
-            document.getElementById("LoginSignUp").innerHTML = name[0].name;
+            let signinData = localStorage.getItem("signinData") || {};
+            let SigninEmail = email.value;
+            let SigninPassword = password.value;
+            signinData = {
+                email : SigninEmail,
+                password : SigninPassword
+            }
+            localStorage.setItem("signinData",JSON.stringify(signinData));
             alert("SignIn Successful");
             closeModal();
+            signupData.forEach((elem) => {
+                if(elem.email === signinData.email){
+                    document.querySelector("#LoginSignUp").innerText = elem.name;
+                    let username = elem.name;
+                    localStorage.setItem("username" , username);
+                }
+            });
         } else if(haveAcc === "onlyEmail"){
             alert("Password Does Not Match");
         } else {
