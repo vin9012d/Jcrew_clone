@@ -28,4 +28,22 @@ function navbar () {
         </div>  `
 }
 
-export default navbar
+
+function sidebar(){
+    return `
+    <button onclick="myFunction()" class="dropbtn">☰</button>
+    <div id="myDropdown" class="dropdown-content">
+      <div><a href = "#">New</a></div>
+      <div><a href = "womenData.html">Women</a></div>
+      <div><a href = "menData.html">Men</a></div>
+      <div><a href = "kids.html">Kids</a></div>
+      <div><a href = "#">Swim</a></div>
+      <div><a href = "#">Cashmare</a></div>
+      <div><a href = "#">Home</a></div>
+      <div><a href = "#">Stories</a></div>
+      <div><a href = "sale.html">Sale</a></div>
+    </div>
+    `;
+}
+
+export {navbar,sidebar}

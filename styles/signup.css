@@ -134,3 +134,25 @@ button {
 .fa-eye , .fa-eye-slash {
     cursor: pointer;
 }
+
+@media all and (min-width:450px) and (max-width:850px) {
+    #signup-form,#forgetPass, #createAcc {
+        width:60%;
+        padding:50px 20px;
+        height:90vh;
+        background-color: #fff;
+        position:fixed;
+        position:relative;
+    }
+}
+
+@media all and (min-width:200px) and (max-width:449px){
+    #signup-form,#forgetPass, #createAcc {
+        width:80%;
+        padding:50px 20px;
+        height:70vh;
+        background-color: #fff;
+        position:fixed;
+        position:relative;
+    }
+}

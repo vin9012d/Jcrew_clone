@@ -14,20 +14,8 @@
 
 
 
- <!-- --------------------------------------------------Navbar Small Screen--------------------------------------------------------- -->
-        <div id = "toggle_sidebar">☰</div>
-
-        <div id = "navbar_slide">
-            <div>New</div>
-            <div><a href = "womenData.html">Women</a></div>
-            <div><a href = "menData.html">Men</a></div>
-            <div><a href = "kids.html">Kids</a></div>
-            <div>Swim</div>
-            <div>Cashmare</div>
-            <div>Home</div>
-            <div>Stories</div>
-            <div><a href = "sale.html">Sale</a></div>
-        </div>
+ <!-- --------------------------------------------------Navbar Small Screen------------------------------------------------ -->
+ <div class="dropdown"></div>
         
 <!-- --------------------------------------------------Navbar---------------------------------------------------------->
     
@@ -227,12 +215,14 @@
 <!-- -------------------------------------------------------------------------------------------------------------------- --> 
 </body>
 </html>
+<script src = "scripts/sidebar.js"></script>
 <script src = "./scripts/signup.js"></script>
 <script src = "scripts/products.js"></script>
 <script type = "module">
-import navbar from './components/navbar.js';
+import {navbar,sidebar} from './components/navbar.js';
 import {footer,foot} from './components/backfooter.js'
 document.getElementById("navbar").innerHTML = navbar();
+document.querySelector(".dropdown").innerHTML = sidebar();
 document.getElementById("back_footer").innerHTML = footer();
 document.getElementById("foot").innerHTML = foot();
 
@@ -245,11 +235,6 @@ document.getElementById("cartlist_count").innerText = kart.length;
 
 </script>
 
-<script>
-    document.getElementById("toggle_sidebar").addEventListener("click",function(){
-        document.getElementById("navbar_slide").style.display = "block"
-    })
-</script>
 
 
 

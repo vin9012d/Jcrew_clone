@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="styles/productpage.css">
 </head>
 <body>
+
+    <div class="dropdown"></div>
     <div id = "navbar">
     </div>
 
@@ -124,11 +126,13 @@
 </body>
 </html>
 <script src = "scripts/productpage.js"></script>
+<script src = "scripts/sidebar.js"></script>
 
 <script type = "module">
-    import navbar from './components/navbar.js'
+    import {navbar,sidebar} from './components/navbar.js'
     import {footer,foot} from './components/backfooter.js'
     document.getElementById("navbar").innerHTML = navbar()
+    document.querySelector(".dropdown").innerHTML = sidebar();
     document.getElementById("back_footer").innerHTML = footer();
     document.getElementById("foot").innerHTML = foot()
 

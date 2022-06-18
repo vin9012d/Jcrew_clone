@@ -142,7 +142,8 @@ p{
 }
 @media all and (min-width:450px) and (max-width:850px){
 
-  
+
+    
     #product_detail{
         display: block;
     }
@@ -162,8 +163,17 @@ p{
 }
 
 @media all and (min-width:200px) and (max-width:449px){
+
+   
     #product_detail{
         display: block;
+    }
+    #product_photo{
+        width: 80%;
+        margin: auto;
+    }
+    #product_photo>img{
+        width: 100%;
     }
     
     #detailed_info{

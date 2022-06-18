@@ -12,6 +12,8 @@
 
 </head>
 <body>
+     <!-- --------------------------------------------------Navbar Small Screen------------------------------------------------ -->
+ <div class="dropdown"></div>
     <!-- --------------------------------------------------Navbar---------------------------------------------------------->
     <div id = "navbar">
     </div>
@@ -52,12 +54,15 @@
 </html>
 
 <!-- <script src="./scripts/kidsArr.js"></script> -->
+<script src = "scripts/sidebar.js"></script>
+<script src = "scripts/sidebar.js"></script>
 <script src="./scripts/kidsP.js" type="module"></script>
 <script src="https://kit.fontawesome.com/448b55d940.js" crossorigin="anonymous"></script>
 <script type = "module">
-    import navbar from './components/navbar.js';
+    import {navbar,sidebar} from './components/navbar.js';
     import {footer,foot} from './components/backfooter.js'
     document.getElementById("navbar").innerHTML = navbar();
+    document.querySelector(".dropdown").innerHTML = sidebar();
     document.getElementById("back_footer").innerHTML = footer();
     document.getElementById("foot").innerHTML = foot();
 
