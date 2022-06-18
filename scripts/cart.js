@@ -186,6 +186,7 @@ let append_sb = (bag, data, totalItems, subTotal_1, subTotal_2) => {
                 temp = temp.includes(".") ? temp : temp + ".00";
                 subTotal_1.innerText = "INR " + temp;
                 subTotal_2.innerText = "INR " + temp;
+                console.log(temp)
 
                 updateQty(total, amount, Number(data[i].quantity), price, data, totalItems);
             }
@@ -196,13 +197,14 @@ let append_sb = (bag, data, totalItems, subTotal_1, subTotal_2) => {
         inc.id = "inc";
         inc.innerText = "+";
         inc.onclick = () => {
-            Number(data[i].quantity++)++;
+            Number(data[i].quantity++);
 
             subTotal += amount;
             temp = new Intl.NumberFormat().format(subTotal);
             temp = temp.includes(".") ? temp : temp + ".00";
             subTotal_1.innerText = "INR " + temp;
             subTotal_2.innerText = "INR " + temp;
+            console.log(temp)
 
             updateQty(total, amount, Number(data[i].quantity), price, data, totalItems);
         }

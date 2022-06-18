@@ -17,6 +17,7 @@ function displayProduct(array,box,arrayFav){
         let strike = true;
         //here 
         let check = JSON.parse(localStorage.getItem("favItem")) || [];
+        
         if(check.length !== 0){
             check.forEach((elem)=>{
                 if(elem.id == el.id){
@@ -25,15 +26,18 @@ function displayProduct(array,box,arrayFav){
                 }
             })
         }
+        
         // till here
         heart.append(itag);
         heart.addEventListener("click",()=>{
+            
             if(strike){
                 itag.setAttribute("class","fa-solid fa-heart fa-lg");
 
                 wishlist(el,arrayFav,strike)
                 //this will going to add element to the wishlist
                 strike = !strike;
+               
             
             }
             else{
@@ -42,6 +46,7 @@ function displayProduct(array,box,arrayFav){
                 wishlist(el,arrayFav,strike)
                 //this will going to delete the element which is meant to be deleted
                 strike = !strike;
+                
     
             }
             
@@ -86,6 +91,8 @@ function create(arg){
 function wishlist(arg,arrayFav,stk){
     if(stk == true){
         arrayFav.push(arg);
+        
+        document.getElementById("wishlist_count").innerHTML = arrayFav.length
         localStorage.setItem("favItem",JSON.stringify(arrayFav));
 
         
@@ -99,6 +106,7 @@ function wishlist(arg,arrayFav,stk){
                     }
                 }
             arrayFav.splice(spl,1);
+            document.getElementById("wishlist_count").innerHTML = arrayFav.length
             
             localStorage.setItem("favItem",JSON.stringify(arrayFav));;
     }

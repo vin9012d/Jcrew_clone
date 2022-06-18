@@ -165,6 +165,8 @@ let login = () => {
             }
         }
         if(haveAcc === true){
+            let name = JSON.parse(localStorage.getItem("signupData"));
+            document.getElementById("LoginSignUp").innerHTML = name[0].name;
             alert("SignIn Successful");
             closeModal();
         } else if(haveAcc === "onlyEmail"){

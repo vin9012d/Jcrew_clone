@@ -50,21 +50,12 @@
     margin: 20px auto;
 }
 #products_append{
-<<<<<<< HEAD:styles/women.css
-    width: 90%;
-    margin: auto;
-=======
->>>>>>> productPage:css/women.css
     display: grid;
     grid-template-columns: repeat(3,1fr);
     gap: 10px;
 
 }
 #products_append>div{
-<<<<<<< HEAD:styles/women.css
-
-=======
->>>>>>> productPage:css/women.css
     padding: 0px 10px 0px 10px;
     margin-top: 10px;
 }
@@ -74,30 +65,11 @@
 #products_append>div>img{
     width: 100%;
 }
-<<<<<<< HEAD:styles/women.css
-
-
-=======
->>>>>>> productPage:css/women.css
 #products_append>div>p{
     font-weight: 600;
     font-size: 13px;
 }
 
-<<<<<<< HEAD:styles/women.css
-
-
-#products_append>div>#offPara{
-    padding: 10px;
-    width: 90%;
-    margin: auto;
-    color: red;
-}
-
-
-
-=======
->>>>>>> productPage:css/women.css
 #products_append>div>span:nth-child(2){
     font-weight: 600;
     font-size: 14px;

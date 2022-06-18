@@ -19,10 +19,10 @@ function navbar () {
             <i class="fa-light fa-magnifying-glass"></i>
             <div id = "LoginSignUp">Sign In</div>
             <div><a href = "wishlist.html"><i class="fa-light fa-heart"></i></a>
-                <div id = "wishlist_count">0</div>
+                <div id = "wishlist_count"></div>
             </div>
             <div><a href = "cart.html"><i class="fa-light fa-bag-shopping"></i></a>
-                <div id = "cartlist_count">0</div>
+                <div id = "cartlist_count"></div>
             </div>
 
         </div>  `

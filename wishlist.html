@@ -111,7 +111,10 @@
         
 
         divone.append(heart,img,title,stkPrice,price)//appending item object keys value inside a div called divone
-
+        divone.addEventListener("click",function(){
+            window.location.href = "productpage.html";
+            localStorage.setItem("product_detail",JSON.stringify(el))
+        })
         box.append(divone);//appending divone to the div product div of html
 
     });
