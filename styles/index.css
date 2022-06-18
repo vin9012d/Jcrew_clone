@@ -5,6 +5,10 @@ body{
     
 }
 
+#navbar_slide{
+    display: none;
+}
+
 #navbar{
     display: flex;
     background-color: white;

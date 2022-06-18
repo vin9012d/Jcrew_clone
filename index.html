@@ -16,6 +16,18 @@
 
  <!-- --------------------------------------------------Navbar Small Screen--------------------------------------------------------- -->
         <div id = "toggle_sidebar">☰</div>
+
+        <div id = "navbar_slide">
+            <div>New</div>
+            <div><a href = "womenData.html">Women</a></div>
+            <div><a href = "menData.html">Men</a></div>
+            <div><a href = "kids.html">Kids</a></div>
+            <div>Swim</div>
+            <div>Cashmare</div>
+            <div>Home</div>
+            <div>Stories</div>
+            <div><a href = "sale.html">Sale</a></div>
+        </div>
         
 <!-- --------------------------------------------------Navbar---------------------------------------------------------->
     
@@ -232,5 +244,12 @@ document.getElementById("wishlist_count").innerText = wish.length;
 document.getElementById("cartlist_count").innerText = kart.length;
 
 </script>
+
+<script>
+    document.getElementById("toggle_sidebar").addEventListener("click",function(){
+        document.getElementById("navbar_slide").style.display = "block"
+    })
+</script>
+
 
 
