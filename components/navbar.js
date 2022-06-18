@@ -11,7 +11,7 @@ function navbar () {
             <div>Cashmare</div>
             <div>Home</div>
             <div>Stories</div>
-            <div><a href = "sale.html">Sale</a></div>
+            <div ><a href = "sale.html" style="color : #da2a2a;">Sale</a></div>
         </div>   
         
         <div id ="search">
