@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/39a06da8de.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./otp.css">
+    <style>
+             body{
+            background-color: #f8f8f8;
+            font-family: sans-serif;
+            margin: 0px;
+            padding:0px,
+            
+        }
+        #header{
+            /* width: 80%; */
+            /* margin: auto; */
+        
+            padding: 10px;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+            background-color: white;
+            text-align: center;
+         
+        }
+        #header img{
+            height: 50px;
+        }
+        #main{
+            /* width: 70%; */
+            display: flex;
+            margin: auto;
+            margin-top: 30px;
+            justify-content: center;
+        }
+        #left{
+            width: 35%;
+            margin-right: 30px;
+            /* border: solid 1px red; */
+            padding: 10px 70px 20px 70px;
+            box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+            background-color: white;
+            
+        }
+        #address{
+            box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+            /* width: 80%; */
+            margin: auto;
+            padding: 20px;
+            /* margin-bottom: 20px; */
+            
+           
+        }
+        #address_div{
+            width: 100%;
+            background-color: white;
+            padding-bottom: 20px;
+            /* padding: 10px 70px 0px 70px; vinod*/
+            /* border: solid 1px black;
+            border: 1px green solid; */
+            /* box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+            padding-bottom: 25px;
+             */
+          
+        }
+
+        #address>div{
+    display: flex;
+        }
+        #address>div:first-child{
+            justify-content: space-between;
+        }
+        #address>div,p{
+         margin-top: -5px;
+        }
+        #Edit{
+            text-decoration: underline;
+            cursor: pointer;
+        }
+        #country{
+          margin-top: -10px;
+        }
+        #payment_check{
+            background-color: white;
+            width: 100%;
+            /* padding: 20px 70px 30px 70px; */
+            /* box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px; */
+            padding-bottom: 50px;
+            
+        }
+        #pmt_check{
+            width: 20px;
+            height: 20px;
+            
+        }
+        
+        #card_div{
+            /* box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+            width: 100%; */
+            background-color: white;
+            /* padding: 20px 70px 40px 70px; */
+            /* border: solid 1px red; */
+            display: block;
+        }
+        #card>div{
+            border: 1px solid black;
+            width: 40%;
+            border-radius: 10px;
+            padding: 7px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .fa-solid{
+            margin-right: 10px;
+        }
+        #label_card{
+           font-weight: bolder;
+        }
+        #card_data{
+            box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+            
+            margin: auto;
+            padding: 30px;
+            background-color: #f8f8f8;
+           
+        }
+        #card_data input {
+            /* font-size: 40px; */
+            height: 40px;
+            margin-top: 20px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+       #mm{
+        display: flex;
+        justify-content: space-between;
+       }
+       #question{
+       margin-top: 30px;
+       font-size: 25px;
+       display: relative;
+       }
+        #card_data>div>input:first-child{
+            width: 50%;
+        }
+        #card_data>div>input:nth-child(2){
+            width: 25%;
+        }
+        #card_logo{
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+        #card_logo img{
+            width: 30px;
+            height: 15px;
+        }
+        #terms_condition{
+            margin-top: 10px;
+            font-size: 12px;
+        }
+        #pay_now{
+            width: 100%;
+            padding: 10px;
+            background-color: black;
+            color: white;
+        }
+        .tooltiptext{
+            visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  
+  /* Position the tooltip */
+  position: absolute;
+  
+ 
+ 
+        }
+        .tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+#right{ 
+    width: 30%;
+    
+    
+
+}
+#back_cart{
+         width: 100%;
+         
+         padding: 5px;
+         font-size: 25px;
+         background-color: white;
+        
+        
+        }
+        #cart_data{
+            background-color: white;
+            padding: 10px 60px 10px 60px;
+        }
+#billings>div{
+            padding: 10px 60px 10px 60px;
+            display: flex;
+            justify-content: space-between;  
+            background-color: white;
+            box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+        }
+        #cart_datas img{
+            width: 100%;
+        }
+        #cart_datas{
+            padding: 20px 60px 0px 60px;
+            background-color: white;
+            box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+        }
+        /* #cart_datas>div{
+            display: flex;
+        } */
+        .box{
+            display: flex;
+            justify-content: space-between;
+        }
+        .box>div:first-child{
+            width: 30%;
+        }
+        .box>div:last-child{
+            width: 60%;
+        }
+       .box p{
+        margin-top: -5px;
+       }
+        .right>div{
+            display: flex;
+            justify-content: space-between;
+        }
+        #cart_datas button{
+            width: 100%;
+            margin-top: 15px;
+            margin-bottom: 25px;
+            font-size: 20px;
+            background-color: white;
+            color: #2261ff;
+            border: 1px solid
+#2261ff;
+padding: 5px;
+
+        }
+        /* ------------------------------------------------------ */      /* -----------------Responsive----------- */
+        @media only screen and (max-width: 850px) {
+            #main{
+                width: 100%;
+                /* border: 1px solid red; */
+                display: block;
+                margin: auto;
+            }
+            #left{
+               
+                width: 100%;
+                margin: auto;
+                margin-top: 30px;
+               
+            }
+            #right{
+                width: 100%;
+                margin: auto;
+                padding: 10px 70px 20px 70px;
+                background-color: white;
+                margin-top: 30px;
+            }
+            #header{
+                width: 100%;
+              padding: 0px 70px 0px 70px;
+            }
+        }
+
+                /* ----------------------------Toggle------------------------------- */
+                .overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0px;
+  left: 200px;
+  bottom: 100px;
+ 
+  background-color: white;
+  opacity: 0.9;
+
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+.overlay-content {
+  position: relative;
+  top: 10%;
+  left: 10%;
+  width: 80%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.overlay a:hover, .overlay a:focus {
+  color: #f1f1f1;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+       
+    </style>
+</head>
+<body>
+    <div id="header">
+       
+        <img src="https://international.jcrew.com/assets/retailer-specific/logo.svg" alt="logo">
+  
+</div><div id="main">
+    <div id="left">
+        <div id="address_div">
+            <h2>Delivery Address</h2>
+            <div id="address">
+                <div>
+                <p id="name">Name</p>
+                <p id="Edit" onclick="edit()">Edit</p>
+            </div>
+                <p id="street">Street</p>
+                <div>
+                <p id="city">City</p>
+                <!-- <p id="pin">PIN</p> -->
+            </div>
+                <p id="country">Country</p>
+            </div>
+        </div>
+        <div id="payment_check">
+            <h2>Payment</h2>
+            <span> <input type="checkbox" id="pmt_check" checked> <label for="pmt_check">Billing address same as delivery address
+            </label> </span>
+        </div>
+      <!-- -------------------------Credit Card Data---------------------------  -->
+        <div id="card_div">
+            <div id="card">
+               <div> 
+                <span><i class="fa-solid fa-credit-card"></i><label for="fa-solid" id="label_card">Card</label></span>
+               </div>
+            </div>
+            <form action="" onsubmit="paynow(event)">
+            <div id="card_data">
+               
+                <input type="text" placeholder="Card Number" required>
+                <div id="mm">
+                    <input type="text" placeholder="MM/YY" required>
+                    <input type="text" placeholder="CVV" required>
+                    <span class="tooltip">
+                    <i class="fa-solid fa-circle-question " id="question" ></i>
+                    <span class="tooltiptext">Please check last 3 digit of your card number</span>
+                </span>
+                </div>
+                <input type="text" id="card_name" placeholder="Name on card" required>
+                <div id="card_logo">
+                    <img src="https://cdn.visa.com/v2/assets/images/logos/visa/blue/logo.png" alt="Visa">
+                    <img src="https://brandeps.com/logo-download/V/Visa-Electron-logo-vector-01.svg" alt="Visa Electron">
+                    <img src="https://www.mastercard.co.in/content/dam/public/mastercardcom/in/en/logos/mc-logo-52.svg" alt="master card">
+                    <img src="https://brand.mastercard.com/content/dam/mccom/brandcenter/More%20About%20Our%20Brands/moreabout_ms_vrt_100_2x.png" alt="maestro">
+                    <img src="http://www.jcbeurope.eu/about/emblem_slogan/images/index/logo_img01.jpg" alt="jcb">
+                    <img src="https://www.dinersclub.com/content/experience-fragments/diners-club/home-header-xf/master/_jcr_content/root/header/image.coreimg.svg/1627886360030/dci-logo-default.svg" alt="Dinners-club">
+
+                </div>
+            </div>
+            <p id="terms_condition">By clicking Pay Now, you agree to eShopWorld's Terms and Conditions.</p>
+
+            <button id="pay_now"  type="submit">PAY NOW</button>
+        </div>
+    </form>
+        <!-- ------------------------OTP Data--------------------- -->
+        <div id="otp">
+            <div id="top">
+                <img src="https://netsafe.hdfcbank.com/ACSWeb/auth/images/Mastercard_Securecode_bg1.gif" alt="mastercard">
+                 <img src="https://netsafe.hdfcbank.com/ACSWeb/auth/images/logo.png" alt="HDFC logo">
+            </div>
+    <hr>
+    <p>Authentetic transaction</p>
+    <hr>
+    <div>
+    <button id="otp_txt">
+        OTP
+    </button>
+    <div>
+        <p id="notification">Sucessfully sent otp on your regestere mobile number</p>
+    </div>
+    <p>Enter OTP</p>
+    <input type="text" id="enter_otp">
+    <p id="resend" onclick="resend()" >Resend OTP</p>
+    <div id="cancel_submit">
+        <button id="cancel">CANCEL</button>
+        <button id="submit" onclick="submit_otp()">SUBMIT OTP</button>
+    </div>
+    <div id="timer_div">This page will automatically timed out after <span id="timer_min">00:</span>:<span id="timer_seconds">00</span> seconds</div>
+    </div>
+    
+    
+    
+        </div>
+    </div>
+    <div id="right">
+        <div id="cart_data">
+            <button id="back_cart" onclick="backToCart()"> BACK TO CART</button>
+        </div>
+        <div id="cart_items">
+        
+        </div>
+        
+        <div id="cart_datas">
+        
+        
+        </div>
+        <div id="billings">
+            <hr>
+              <div>
+                 <label for="items">Items</label>
+                 <span><span>INR </span><span id="raw_total"> 550000</span></span>
+                </div>
+                <div>
+                   <label for="items">Delivery</label>
+                   <span><span>INR</span><span id="delivery_price"> 1710</span></span>
+                </div>
+                <div>
+                   <label for="items">Total</label>
+                   <span><span>INR </span><span id="total_price"> 3300</span></span>
+              </div>
+          </div>
+    </div>
+</div>
+
+<!----------- Toggle ----------->
+<div id="myNav" class="overlay">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <div class="overlay-content">
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#">Clients</a>
+      <a href="#">Contact</a>
+    </div>
+  </div>
+</body>
+</html>
+<!-- <script type="module">
+    import cart from  "./cartData.js";
+    document.querySelector("#right").innerHTML=cart();
+</script> -->
+<script src="./innerfunctionality.js"></script>
+<script src="./append.js"></script>

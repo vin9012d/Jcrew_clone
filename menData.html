@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SALE | JCrew</title>
+    <title>Man's Clothing | J.Crew</title>
     <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.1.1/css/all.css">
     <link rel="icon" href="https://www.jcrew.com/favicon.ico">
     <link rel="stylesheet" href="./styles/women.css">
@@ -12,8 +12,7 @@
 
 </head>
 <body>
-<<<<<<< HEAD
- <!-- --------------------------------------------------Navbar Small Screen------------------------------------------------ -->
+     <!-- --------------------------------------------------Navbar Small Screen------------------------------------------------ -->
  <div class="dropdown"></div>
     <!-- --------------------------------------------------Navbar---------------------------------------------------------->
     <div id = "navbar">
@@ -22,52 +21,56 @@
     <hr>
 
     <!-- --------------------------------------------------Navbar---------------------------------------------------------- -->
-
-
-   
-=======
-    
->>>>>>> productPage
-    <h3 id="intro">SALE</h3>
+    <h3 id="intro">SHOP ALL MAN'S CLOTHING</h3>
+    <p id="tagline">Shop by Size & fit</p>
+    <div id="sizes">
+        <!-- <div> -->
+            <div>XS</div>
+            <div>S</div>
+            <div>M</div>
+            <div>L</div>
+            <div>X</div>
+            <div>XL</div>
+            <div>XXL</div>
+            <div>SLIM</div>
+            <div>TALL</div>
+        <!-- </div> -->
+        
+    </div>
     <div id="filter-bar">
         <select name="Filters" id="filter" onchange="attireFilter()">
             <option value="usual">Category</option>
-            <option value="top">Top</option>
-            <option value="shirt">Shirt</option>
+            <option value="clothing">Clothing</option>
+            <option value="accessories">Accessories</option>
             <option value="shoes">Shoes</option>
-            <option value="belt">Accesories</option>
-            <!-- this select tag will help to filter products -->
+            
         </select>
         <select name="" id="sorting" onchange="sorting()">
             <option value="usual">Featured</option>
             <option value="LTH">Price: Low to High</option>
             <option value="HTL">Price: High to Low</option>
-            <!-- this select tag will help to sort product -->
         </select>
     </div>
-
     <div id="products_append">
         <!-- append products here -->
     </div>
-
     
-<<<<<<< HEAD
-    <!-- ----------------------------------------------------Footer Part--------------------------------------------------- --> 
 
-        <hr>
-        <div id = "foot"></div>
+     <!-- ----------------------------------------------------Footer Part--------------------------------------------------- --> 
 
-        <div id = "back_footer"></div>
+<hr>
+<div id = "foot"></div>
 
-    <!-- -------------------------------------------------------------------------------------------------------------------- --> 
-=======
->>>>>>> productPage
+<div id = "back_footer"></div>
+
+<!-- -------------------------------------------------------------------------------------------------------------------- --> 
 </body>
 </html>
-<script src = "scripts/sidebar.js"></script>
-<script src="./scripts/saleP.js" ></script>
-<script src="https://kit.fontawesome.com/448b55d940.js" crossorigin="anonymous"></script>
 
+<!-- <script src="./script/manArr.js"></script> -->
+<script src = "scripts/sidebar.js"></script>
+<script src="./scripts/manP.js" type="module"></script>
+<script src="https://kit.fontawesome.com/448b55d940.js" crossorigin="anonymous"></script>
 <script type = "module">
     import {navbar,sidebar} from './components/navbar.js';
     import {footer,foot} from './components/backfooter.js'

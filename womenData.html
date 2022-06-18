@@ -5,13 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Women's Clothing | J.Crew</title>
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.1.1/css/all.css">
     <link rel="icon" href="https://www.jcrew.com/favicon.ico">
-    <link rel="stylesheet" href="./css/women.css">
+    <link rel="stylesheet" href="./styles/women.css">
+    <link rel="stylesheet" href="./styles/index.css">
     
 
 </head>
 <body>
+<<<<<<< HEAD
+
+     <!-- --------------------------------------------------Navbar Small Screen------------------------------------------------ -->
+    <div class="dropdown"></div>
+    <!-- --------------------------------------------------Navbar---------------------------------------------------------->
+    <div id = "navbar">
+    </div>
+    <h4 id = "have_question">Have a question? We can help.</h4>
+    <hr>
+
+    <!-- --------------------------------------------------Navbar---------------------------------------------------------- -->
+=======
     
+>>>>>>> productPage
     <h3 id="intro">SHOP ALL WOMEN'S CLOTHING</h3>
     <p id="tagline">Shop by Size & fit</p>
     <div id="sizes">
@@ -45,6 +60,22 @@
             <option value="HTL">Price: High to Low</option>
         </select>
     </div>
+<<<<<<< HEAD
+    
+        <div id="products_append">
+            <!-- append products here -->
+        </div>
+
+    
+    <!-- ----------------------------------------------------Footer Part--------------------------------------------------- --> 
+
+        <hr>
+        <div id = "foot"></div>
+
+        <div id = "back_footer"></div>
+
+<!-- -------------------------------------------------------------------------------------------------------------------- --> 
+=======
     <!-- <div> -->
         <!-- <div id="sidebar">
             append sorting filter here
@@ -54,9 +85,35 @@
         </div>
     <!-- </div> -->
     
+>>>>>>> productPage
 </body>
 </html>
-<script src="./script/womenArr.js"></script>
-<script src="./script/womenP.js" type="module"></script>
+<!-- <script src="./scripts/womenArr.js"></script> -->
+<script src = "scripts/sidebar.js"></script>
+<script src="./scripts/womenP.js" type="module"></script>
 <script src="https://kit.fontawesome.com/448b55d940.js" crossorigin="anonymous"></script>
+<script type = "module">
+    import navbar from './components/navbar.js';
+    import {footer,foot} from './components/backfooter.js'
+    document.getElementById("navbar").innerHTML = navbar();
+    document.querySelector(".dropdown").innerHTML = sidebar();
+    document.getElementById("back_footer").innerHTML = footer();
+    document.getElementById("foot").innerHTML = foot();
 
+
+
+    document.getElementById("logo").addEventListener("click",function(){
+        window.location.href = "index.html"
+    })
+    let query = document.getElementById("LoginSignUp")
+
+    let obj = JSON.parse(localStorage.getItem("signupData"))
+    document.getElementById("LoginSignUp").innerText = obj[0].name
+
+    let kart = JSON.parse(localStorage.getItem("cartData"))
+    let wish = JSON.parse(localStorage.getItem("favItem"))
+    document.getElementById("wishlist_count").innerText = wish.length;
+    document.getElementById("cartlist_count").innerText = kart.length;
+   
+    
+</script>

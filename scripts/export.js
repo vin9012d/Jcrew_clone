@@ -8,6 +8,7 @@ function displayProduct(array,box,arrayFav){
     }
     array.forEach((el) => {
         let divone = create("div");
+        
 
         let heart = create("span");
         
@@ -33,8 +34,7 @@ function displayProduct(array,box,arrayFav){
                 wishlist(el,arrayFav,strike)
                 //this will going to add element to the wishlist
                 strike = !strike;
-                
-
+            
             }
             else{
                 itag.setAttribute("class","fa-regular fa-heart fa-lg")
@@ -42,15 +42,24 @@ function displayProduct(array,box,arrayFav){
                 wishlist(el,arrayFav,strike)
                 //this will going to delete the element which is meant to be deleted
                 strike = !strike;
-               
-                
+    
             }
             
         })
         
         let title = create("p");//name of product
         title.innerText = el.name;
+
+
         let img = create("img")//image of product
+
+        //Added-----------------------------------------------------
+        img.addEventListener("click",function(){
+            window.location.href = "productpage.html";
+            localStorage.setItem("product_detail",JSON.stringify(el))
+        })
+       // Added-----------------------------------------------------
+
         img.src = el.imgUrl;
         let price= create("span");//price of product
         price.innerText = " INR "+el.strikePrice;
@@ -78,6 +87,8 @@ function wishlist(arg,arrayFav,stk){
     if(stk == true){
         arrayFav.push(arg);
         localStorage.setItem("favItem",JSON.stringify(arrayFav));
+
+        
     }
     else{
         let favArr = JSON.parse(localStorage.getItem("favItem"));;

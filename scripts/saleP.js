@@ -1,4 +1,3 @@
-
 let arr = JSON.parse(localStorage.getItem("sale"));
 
 let productBox = document.getElementById("products_append")
@@ -41,6 +40,13 @@ function displayProduct(array,box){
         title.innerText = el.name;
         let img = create("img")//image of product
         img.src = el.imgUrl;
+
+        //Added-----------------------------------------------------
+        img.addEventListener("click",function(){
+            window.location.href = "productpage.html";
+            localStorage.setItem("product_detail",JSON.stringify(el))
+        })
+       // Added-----------------------------------------------------
         let price= create("span");//price of product
         price.innerText = " INR "+el.strikePrice ;
         price.style.color = "#da2a2a"
