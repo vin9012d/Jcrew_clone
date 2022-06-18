@@ -63,22 +63,30 @@
         let heart = create("span");
         
         let itag = create("i");// i tag to get favorite icon
-        itag.setAttribute("class","fa-solid fa-heart fa-lg")//this was changed as compared to export js
+        //itag.setAttribute("class","fa-solid fa-heart fa-lg")//this was changed as compared to export js
+        itag.setAttribute("class","fa-solid fa-heart fa-lg");
         let strike = false;
         
 
         heart.append(itag);
-        heart.addEventListener("click",()=>{
-            /*if(strike){
+        /*heart.addEventListener("click",()=>{
+            if(strike){
                 itag.setAttribute("class","fa-solid fa-heart fa-lg");
                 wishlist(el,arrayFav,strike)
                 //this will going to add element to the wishlist
                 displayProduct(array,box,arrayFav)
                 strike = !strike;
                 
+<<<<<<< HEAD
             }*/
             //else{
                 //itag.setAttribute("class","fa-regular fa-heart fa-lg")
+=======
+
+            }
+            else{
+                itag.setAttribute("class","fa-regular fa-heart fa-lg")
+>>>>>>> productPage
 
                 wishlist(el,arrayFav,strike)
                 //this will going to delete the element which is meant to be deleted
@@ -86,19 +94,19 @@
                 //strike = !strike;
                
                 
-            //}
+            }
             
-        })
+        })*/
         
         let title = create("p");//name of product
         title.innerText = el.name;
         let img = create("img")//image of product
         img.src = el.imgUrl;
         let price= create("span");//price of product
-        price.innerText = " INR "+el.price;
+        price.innerText = " INR "+el.strikePrice;
         price.style.color = "#da2a2a"
         let stkPrice = create("span")
-        stkPrice.innerText = "INR "+el.strikePrice;//strike price of product
+        stkPrice.innerText = "INR "+el.price;//strike price of product
         stkPrice.style.textDecoration = "line-through";
         
 

@@ -15,8 +15,17 @@ function displayProduct(array,box,arrayFav){
         let itag = create("i");// i tag to get favorite icon
         itag.setAttribute("class","fa-regular fa-heart fa-lg")
         let strike = true;
-        
-
+        //here 
+        let check = JSON.parse(localStorage.getItem("favItem")) || [];
+        if(check.length !== 0){
+            check.forEach((elem)=>{
+                if(elem.id == el.id){
+                    itag.setAttribute("class","fa-solid fa-heart fa-lg");
+                    strike = !strike;
+                }
+            })
+        }
+        // till here
         heart.append(itag);
         heart.addEventListener("click",()=>{
             if(strike){
