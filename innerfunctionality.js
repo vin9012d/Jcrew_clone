@@ -36,10 +36,15 @@ function resend(){
 //submit payment
 function submit_otp(){
     let otp=document.querySelector("#enter_otp").value;
-    if(otp=="78665"){
+    if (otp == "78665") {
+        let data1 = JSON.parse(localStorage.getItem("cartData"));
+        data1 = null;
+        localStorage.setItem("cartData", JSON.stringify(data1));
         alert(`
         Your order is placed sucessfully
-        Now You will be redirected to the homepage`)
+        Now You will be redirected to the homepage`);
+      window.location.href="index.html"
+        
     }else
     alert(`You have entered wrong otp`)
 }

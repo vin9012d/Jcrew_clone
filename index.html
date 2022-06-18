@@ -228,10 +228,17 @@ document.getElementById("foot").innerHTML = foot();
 
 document.getElementById("LoginSignUp").addEventListener("click",signupNow);
 
-let kart = JSON.parse(localStorage.getItem("cartData"))
-let wish = JSON.parse(localStorage.getItem("favItem"))
+let kart = JSON.parse(localStorage.getItem("cartData")) || [];
+let wish = JSON.parse(localStorage.getItem("favItem")) || [];
 document.getElementById("wishlist_count").innerText = wish.length;
 document.getElementById("cartlist_count").innerText = kart.length;
+
+let signupData = JSON.parse(localStorage.getItem("signupData")) || [];
+console.log(signupData)
+if(signupData.length>0){
+document.querySelector("#LoginSignUp").innerText=signupData[0].name;
+}
+
 
 </script>
 
