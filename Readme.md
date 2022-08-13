@@ -9,18 +9,15 @@
 #### Also added the responsivness so user can use the site in any device they have.
 
 ## Features
----
 - Update Home Page as per daily best offer.
 - No, need to login for checking the product of website.
 - Display data by using local storage of browser.
 - Update and design to provide best User Experience.
 
 ## Site to be Made
----
  *[Click Here For Website Link](https://www.jcrew.com/in/)*.
 
 ## Team Members
----
 1. Ansh Girdhar ( fw18_0096 )
 2. Kishan Savaj ( fw18_0169 )
 3. Ankit Parte ( fw18_0782 )
@@ -28,7 +25,6 @@
 5. Vinod Chaudhari ( fw17_0447 )
 
 ## Tools and Language used
----
 - Javascript
 - HTML
 - CSS
