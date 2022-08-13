@@ -1,7 +1,6 @@
 # TEAM JCREW
 
 ## Description
----
 #### This is a sample application that demonstrates an E-commerce website using HTML, CSS and Javascript. The application loads products on local storage and displays them. Users can select to display products in a single category. Users can click on any product to get more information including pricing, reviews and rating.
 
 #### Users can select items and add them to their shopping cart.
@@ -32,15 +31,13 @@
 - Font-awesome
 
 ## Site Made by Us
----
 https://storied-platypus-db74f4.netlify.app/
+
 ## Copy this link to clone the Github Repository
----
 https://github.com/vin9012d/Project-unit-3.git
+
 ## Video Link
----
 https://drive.google.com/file/d/11yaIyDmM3DI1mLFinbL4xb_V-VCsMAR4/view?usp=sharing
 
 ## Thank You
----
 
