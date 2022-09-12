@@ -31,7 +31,7 @@
 - Font-awesome
 
 ## Site Made by Us
-https://storied-platypus-db74f4.netlify.app/
+http://jcrew-project-clone.netlify.app/
 
 ## Copy this link to clone the Github Repository
 https://github.com/vin9012d/Project-unit-3.git
