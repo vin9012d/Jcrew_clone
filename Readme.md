@@ -19,6 +19,24 @@
 ---
  *[Click Here For Website Link](https://www.jcrew.com/in/)*.
 
+## Glimpse of Jcrew
+---
+<h2>Glimpses of Buffer</h2>
+
+<p align="center">
+<img src="./photos/jcrewhomepage%20.png"  width=400 />
+ <img src="./photos/jcrewpayment%20.png"  width=400 />
+<img src="./photos/jcrewsignup%20.png" width=400 /> 
+<img src="./photos/jcrewsignup.png" width=400  />
+<img src="./photos/jcrewaddress%20.png"  width=400 />
+
+<img src="./photos/jcrewcard%20.png" width=400  />
+
+
+
+</p>  
+
+
 ## Team Members
 ---
 1. Ansh Girdhar ( fw18_0096 )
