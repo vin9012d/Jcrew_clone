@@ -18,7 +18,7 @@
 
 ## Glimpse of Jcrew
 ---
-<h2>Glimpses of Buffer</h2>
+
 
 <p align="center">
 <img src="./photos/jcrewhomepage%20.png"  width=400 />
